@@ -10,3 +10,5 @@ Oder späterer nutzen...
 
 Du magst es, Wörter in eine Liste zu packen?
 Dann füge sie hier hinzu: [Wordlist](https://github.com/Reisbrot/xWrd-Buster/blob/master/Devvn/bin/devvn/wordlist)
+
+Ich persönlich programmiere den "internal"-Weg. Wenn ihr Lust habt könnte irgendwer da draussen aber ruhig den "external" - Weg erzeugen :P
