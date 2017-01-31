@@ -58,61 +58,10 @@ static int length;
 	    System.out.print("Als letztes noch die Zeilenlänge: ");
 	    length = new java.util.Scanner( System.in ).nextInt();
 		System.out.println("dx" + namelist);
-	    verarbeitung(field, inputs, numberofletters, length, namelist);
+		
+	    processing.verarbeitung(field, inputs, numberofletters, length, namelist);
 		
 	}
-
-	
-	
-	private static void verarbeitung(List<String> field, ArrayList<String> known, int sobig, int l, List<String> list) {
-		for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
-			List<String> field_part_1 = field.subList(0, l-1);
-			List<String> field_part_2 = field.subList(l, l+l-1);
-			List<String> field_part_3 = field.subList(l+l, i*l-1);
-			List<String> field_part_4 = field.subList(l+l+l, i*l-1);
-			List<String> field_part_5 = field.subList(l+l+l+l, i*l-1);
-			List<String> field_part_6 = field.subList(l+l+l+l+l, i*l-1);
-			List<String> field_part_7 = field.subList(l+l+l+l+l+l, i*l-1);
-
-			
-			
-			
-			
-			for(int x=0; x < l; x++){           //Für jedes Zeichen
-				
-			}
-			
-		}
-	}
-		
-
-
-	 
-	 
-	/*Test123*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }
