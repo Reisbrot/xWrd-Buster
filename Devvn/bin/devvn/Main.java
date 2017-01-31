@@ -6,7 +6,7 @@ import java.util.*;
 public class Main {
 	
 	
-static List<String> namelist = FileUtils.readLines(new File("wordlist"));
+static List<String> namelist;
 String[] wordlist = namelist.toArray(new String[0]);
 String[] knownletters;	
 
@@ -19,6 +19,11 @@ static List<String> field = new ArrayList<String>();
 static int length;
 	
 	public static void main(String[] args){
+		List<String> namelist = str_party1.list;
+		namelist.addAll(str_party2.list);
+		System.out.println("Uhr" + namelist);
+		
+		
 		//INPUT
 		System.out.println("Rätzel-Löser v0.1");
 		System.out.println("Bitte nenn mir, wie viele Buchstaben es im Rätzel gibt:");

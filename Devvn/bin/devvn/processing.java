@@ -1,14 +1,16 @@
 package devvn;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class processing {
 
 static void verarbeitung(List<String> field, ArrayList<String> known, int sobig, int l, List<String> list) {
 		
 		
-		System.out.println("PENIZZZZZ");
 		
 		
 		for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
@@ -47,4 +49,33 @@ static void verarbeitung(List<String> field, ArrayList<String> known, int sobig,
 		}
 	}
 
+
+
+
+
+
+
+
+public static List<String> readFile(String fileName) {
+    try {
+      File file = new File(fileName);
+      Scanner scanner = new Scanner(file);
+      while (scanner.hasNextLine()) {
+        System.out.println(scanner.nextLine());
+      }
+      scanner.close();
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+	return null;
+  }
+
 }
+
+
+
+
+
+
+
+
