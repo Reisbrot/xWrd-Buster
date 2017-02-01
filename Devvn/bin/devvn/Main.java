@@ -7,9 +7,8 @@ public class Main {
 	
 	
 static List<String> namelist;
-String[] wordlist = namelist.toArray(new String[0]);
-String[] knownletters;	
 
+String[] knownletters;	
 static String input;
 static String cleanedinput;
 static String xword;
@@ -18,6 +17,7 @@ static ArrayList<String> inputs = new ArrayList<String>();
 static List<String> field = new ArrayList<String>();
 static int length;
 	
+	@SuppressWarnings("resource")
 	public static void main(String[] args){
 		List<String> namelist = str_party1.list;
 		namelist.addAll(str_party2.list);
@@ -35,7 +35,7 @@ static int length;
 	    
 		while(true){
 	    
-		    System.out.println("Nun sag mir einen Buchstaben, welchen du schon kennst und gibst dann die dazuehörige Zahl an. Wenn du keine weiteren Buchstaben kennst, schreib 'Weiter'");
+		    System.out.println("Nun sag mir einen Buchstaben, welchen du schon kennst und gibst dann die dazugehörige Zahl an. Wenn du keine weiteren Buchstaben kennst, schreib 'Weiter'");
 		    input = new java.util.Scanner( System.in ).nextLine();
 		    input.toLowerCase();
 		    System.out.println(input);
@@ -65,7 +65,7 @@ static int length;
 	    length = new java.util.Scanner( System.in ).nextInt();
 		System.out.println("dx" + namelist);
 		
-	    processing.verarbeitung(field, inputs, numberofletters, length, namelist);
+	    processing.verarbeitung(field, inputs, letters, length, namelist);
 		
 	}
 	

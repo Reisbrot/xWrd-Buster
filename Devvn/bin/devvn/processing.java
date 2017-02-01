@@ -3,15 +3,39 @@ package devvn;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class processing {
+		
+static String number_docking = "";
+static int number;
+static int[] numbers;
 
-static void verarbeitung(List<String> field, ArrayList<String> known, int sobig, int l, List<String> list) {
+static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list) {
 		
+	numbers = new int[known.size()];
+	
+	for(int i = 0; i < known.size()-1; i++){
+		int x=0;
+		while(true){
+		 Character character = known.get(i).charAt(x);
+	        if (Character.isDigit(character))
+	            number_docking += character;
+	        
+			if (x < known.get(i).length()-1){x++;}else{number = Integer.parseInt(number_docking); numbers[i] = number;  number_docking=""; break;}
+			}
+	}
 		
-		
+	
+	
+System.out.println("iehfiuh  " + Arrays.toString(numbers));
+			
+	
+	
+	
+	
 		
 		for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
 			
