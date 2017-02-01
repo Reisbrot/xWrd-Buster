@@ -21,6 +21,7 @@ static int length;
 	public static void main(String[] args){
 		List<String> namelist = str_party1.list;
 		namelist.addAll(str_party2.list);
+		namelist.addAll(str_party3.list);
 		System.out.println("Uhr" + namelist);
 		
 		
