@@ -20,6 +20,7 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 	numbers = new int[known.size()];
 	cleaned_letters = new char[known.size()];
 	
+	
 	for(int i = 0; i < known.size(); i++){
 		int x=0;
 		while(true){
@@ -31,13 +32,20 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 			}
 		
 		Character character = known.get(i).charAt(0);
-			letter_docking += character;
+		letter_docking += character;
 	}
 	cleaned_letters = letter_docking.toCharArray();
+	
+	
+	for(int i = 0; i < known.size(); i++){
+		letters[numbers[i]-1] = cleaned_letters[i]; 
+	}
+	
+	
 		
 	
 	
-System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters));
+System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
 			
 	
 	
