@@ -16,7 +16,9 @@ static int[] numbers;
 static char[] cleaned_letters;
 
 static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list) {
-		
+	
+	Arrays.fill(letters, 0, letters.length, ' ');
+	
 	numbers = new int[known.size()];
 	cleaned_letters = new char[known.size()];
 	
@@ -40,48 +42,45 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 	for(int i = 0; i < known.size(); i++){
 		letters[numbers[i]-1] = cleaned_letters[i]; 
 	}
-	
-	
-		
-	
-	
-System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
-			
-	
-	
-	
-	
-		
-		for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			/*List<String> field_part_1 = field.subList(0, l-1);
-			List<String> field_part_2 = field.subList(l, l+l-1);
-			List<String> field_part_3 = field.subList(l+l, i*l-1);
-			List<String> field_part_4 = field.subList(l+l+l, i*l-1);
-			List<String> field_part_5 = field.subList(l+l+l+l, i*l-1);
-			List<String> field_part_6 = field.subList(l+l+l+l+l, i*l-1);
-			List<String> field_part_7 = field.subList(l+l+l+l+l+l, i*l-1);*/
 
+	System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
 			
+
+	
+	/*System.out.println(field_part1);
+	System.out.println(field_part2);
+	System.out.println(field_part3);
+	System.out.println(field_part4);
+	System.out.println(field_part5);
+	System.out.println(field_part6);
+	System.out.println(field_part7);
+	System.out.println(field_part8);
+	System.out.println(field_part9);
+	System.out.println(field_part10);
+	System.out.println(field_part11);
+	System.out.println(field.size());*/
+	
+	
+	
+	
+	
+	for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
 			
-			
-			
+			switch(i){
+			case 0: List<String> field_part1 = field.subList(0, l);
+			case 1: List<String> field_part2 = field.subList(l+1, 2*l);
+			case 2: List<String> field_part3 = field.subList(2*l+1, 3*l);
+			case 3:	List<String> field_part4 = field.subList(3*l+1, 4*l);
+			case 4: List<String> field_part5 = field.subList(4*l+1, 5*l);
+			case 5: List<String> field_part6 = field.subList(5*l+1, 6*l);
+			case 6: List<String> field_part7 = field.subList(6*l+1, 7*l);
+			case 7: List<String> field_part8 = field.subList(7*l+1, 8*l);
+			case 8: List<String> field_part9 = field.subList(8*l+1, 9*l);
+			case 9:	List<String> field_part10 = field.subList(9*l+1, 10*l);
+			case 10: List<String> field_part11 = field.subList(10*l+1, 11*l);
+			}
 			for(int x=0; x < l; x++){           //Für jedes Zeichen
+
 				
 			}
 			
