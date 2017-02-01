@@ -10,14 +10,17 @@ import java.util.Scanner;
 public class processing {
 		
 static String number_docking = "";
+static String letter_docking = "";
 static int number;
 static int[] numbers;
+static char[] cleaned_letters;
 
 static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list) {
 		
 	numbers = new int[known.size()];
+	cleaned_letters = new char[known.size()];
 	
-	for(int i = 0; i < known.size()-1; i++){
+	for(int i = 0; i < known.size(); i++){
 		int x=0;
 		while(true){
 		 Character character = known.get(i).charAt(x);
@@ -26,11 +29,15 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 	        
 			if (x < known.get(i).length()-1){x++;}else{number = Integer.parseInt(number_docking); numbers[i] = number;  number_docking=""; break;}
 			}
+		
+		Character character = known.get(i).charAt(0);
+			letter_docking += character;
 	}
+	cleaned_letters = letter_docking.toCharArray();
 		
 	
 	
-System.out.println("iehfiuh  " + Arrays.toString(numbers));
+System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters));
 			
 	
 	
