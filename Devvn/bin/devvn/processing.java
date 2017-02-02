@@ -68,31 +68,31 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 			
 			switch(i){
 			case 0: List<String> field_part1 = field.subList(0, l);
-			System.out.println(field_part1);
 			case 1: List<String> field_part2 = field.subList(l, 2*l);
-			System.out.println(field_part2);
 			case 2: List<String> field_part3 = field.subList(2*l, 3*l);
-			System.out.println(field_part3);
 			case 3:	List<String> field_part4 = field.subList(3*l, 4*l);
-			System.out.println(field_part4);
 			case 4: List<String> field_part5 = field.subList(4*l, 5*l);
-			System.out.println(field_part5);
 			case 5: List<String> field_part6 = field.subList(5*l, 6*l);
-			System.out.println(field_part6);
 			case 6: List<String> field_part7 = field.subList(6*l, 7*l);
-			System.out.println(field_part7);
 			case 7: List<String> field_part8 = field.subList(7*l, 8*l);
-			System.out.println(field_part8);
 			case 8: List<String> field_part9 = field.subList(8*l, 9*l);
-			System.out.println(field_part9);
 			case 9:	List<String> field_part10 = field.subList(9*l, 10*l);
-			System.out.println(field_part10);
 			case 10: List<String> field_part11 = field.subList(10*l, 11*l);
-			System.out.println(field_part11);
+			case 11: List<String> field_part12 = field.subList(l, l);  //TODO l numbers
+			case 12: List<String> field_part13 = field.subList(l, 2*l);
+			case 13: List<String> field_part14 = field.subList(2*l, 3*l);
+			case 14:List<String> field_part15 = field.subList(3*l, 4*l);
+			case 15: List<String> field_part16 = field.subList(4*l, 5*l);
+			case 16: List<String> field_part17 = field.subList(5*l, 6*l);
+			case 17: List<String> field_part18 = field.subList(6*l, 7*l);
+			case 18: List<String> field_part19 = field.subList(7*l, 8*l);
+			case 19: List<String> field_part20 = field.subList(8*l, 9*l);
+			case 20:List<String> field_part21 = field.subList(9*l, 10*l);
+			case 21: List<String> field_part22 = field.subList(10*l, 11*l);
 			
 			}
 			for(int x=0; x < l; x++){           //Für jedes Zeichen
-
+					
 				
 			}
 			
