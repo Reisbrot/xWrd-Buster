@@ -68,16 +68,28 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 			
 			switch(i){
 			case 0: List<String> field_part1 = field.subList(0, l);
-			case 1: List<String> field_part2 = field.subList(l+1, 2*l);
-			case 2: List<String> field_part3 = field.subList(2*l+1, 3*l);
-			case 3:	List<String> field_part4 = field.subList(3*l+1, 4*l);
-			case 4: List<String> field_part5 = field.subList(4*l+1, 5*l);
-			case 5: List<String> field_part6 = field.subList(5*l+1, 6*l);
-			case 6: List<String> field_part7 = field.subList(6*l+1, 7*l);
-			case 7: List<String> field_part8 = field.subList(7*l+1, 8*l);
-			case 8: List<String> field_part9 = field.subList(8*l+1, 9*l);
-			case 9:	List<String> field_part10 = field.subList(9*l+1, 10*l);
-			case 10: List<String> field_part11 = field.subList(10*l+1, 11*l);
+			System.out.println(field_part1);
+			case 1: List<String> field_part2 = field.subList(l, 2*l);
+			System.out.println(field_part2);
+			case 2: List<String> field_part3 = field.subList(2*l, 3*l);
+			System.out.println(field_part3);
+			case 3:	List<String> field_part4 = field.subList(3*l, 4*l);
+			System.out.println(field_part4);
+			case 4: List<String> field_part5 = field.subList(4*l, 5*l);
+			System.out.println(field_part5);
+			case 5: List<String> field_part6 = field.subList(5*l, 6*l);
+			System.out.println(field_part6);
+			case 6: List<String> field_part7 = field.subList(6*l, 7*l);
+			System.out.println(field_part7);
+			case 7: List<String> field_part8 = field.subList(7*l, 8*l);
+			System.out.println(field_part8);
+			case 8: List<String> field_part9 = field.subList(8*l, 9*l);
+			System.out.println(field_part9);
+			case 9:	List<String> field_part10 = field.subList(9*l, 10*l);
+			System.out.println(field_part10);
+			case 10: List<String> field_part11 = field.subList(10*l, 11*l);
+			System.out.println(field_part11);
+			
 			}
 			for(int x=0; x < l; x++){           //Für jedes Zeichen
 
