@@ -90,55 +90,58 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 	}
 
 	System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
-			
 
-	
-	/*System.out.println(field_part1);
-	System.out.println(field_part2);
-	System.out.println(field_part3);
-	System.out.println(field_part4);
-	System.out.println(field_part5);
-	System.out.println(field_part6);
-	System.out.println(field_part7);
-	System.out.println(field_part8);
-	System.out.println(field_part9);
-	System.out.println(field_part10);
-	System.out.println(field_part11);
-	System.out.println(field.size());*/
-	
-	System.out.println(field.size());
-	
-	
-	
+
 	for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
 			
 		    //Wieso ich kein Switch benutzt habe? Gab nen Error, das ist alles.
-            if (i == 0){ List<String> field_part1 = field.subList(0, l); fp1 = true;}
-            if (i == 1){ List<String> field_part2 = field.subList(l, 2*l); fp2 = true;}
-            if (i == 2){ List<String> field_part3 = field.subList(2*l, 3*l); fp3 = true;}
-            if (i == 3){List<String> field_part4 = field.subList(3*l, 4*l); fp4 = true;}
-            if (i == 4){ List<String> field_part5 = field.subList(4*l, 5*l); fp5 = true;}
-            if (i == 5){List<String> field_part6 = field.subList(5*l, 6*l); fp6 = true;}
-            if (i == 6){List<String> field_part7 = field.subList(6*l, 7*l); fp7 = true;}
-            if (i == 7){List<String> field_part8 = field.subList(7*l, 8*l); fp8 = true;}
-            if (i == 8){List<String> field_part9 = field.subList(8*l, 9*l); fp9 = true;}
-            if (i == 9){List<String> field_part10 = field.subList(9*l, 10*l); fp10 = true;}
-            if (i == 10){List<String> field_part11 = field.subList(10*l, 11*l); fp11 = true;}
-            if (i == 11){List<String> field_part12 = field.subList(11*l, 12*l); fp12 = true;}
-            if (i == 12){List<String> field_part13 = field.subList(12*l, 13*l); fp13 = true;}
-            if (i == 13){List<String> field_part14 = field.subList(13*l, 14*l); fp14 = true;}
-            if (i == 14){List<String> field_part15 = field.subList(14*l, 15*l); fp15 = true;}
-            if (i == 15){List<String> field_part16 = field.subList(15*l, 16*l); fp16 = true;}
-            if (i == 16){List<String> field_part17 = field.subList(16*l, 17*l); fp17 = true;}
-            if (i == 17){List<String> field_part18 = field.subList(17*l, 18*l); fp18 = true;}
-            if (i == 18){List<String> field_part19 = field.subList(18*l, 19*l); fp19 = true;}
-            if (i == 19){List<String> field_part20 = field.subList(19*l, 20*l); fp20 = true;}
-            if (i == 20){List<String> field_part21 = field.subList(20*l, 21*l); fp21 = true;}
-            if (i == 21){List<String> field_part22 = field.subList(21*l, 22*l); fp22 = true;}
+            if (i == 0){field_part1 = field.subList(0, l); fp1 = true;}
+            if (i == 1){field_part2 = field.subList(l, 2*l); fp2 = true;}
+            if (i == 2){field_part3 = field.subList(2*l, 3*l); fp3 = true;}
+            if (i == 3){field_part4 = field.subList(3*l, 4*l); fp4 = true;}
+            if (i == 4){field_part5 = field.subList(4*l, 5*l); fp5 = true;}
+            if (i == 5){field_part6 = field.subList(5*l, 6*l); fp6 = true;}
+            if (i == 6){field_part7 = field.subList(6*l, 7*l); fp7 = true;}
+            if (i == 7){field_part8 = field.subList(7*l, 8*l); fp8 = true;}
+            if (i == 8){field_part9 = field.subList(8*l, 9*l); fp9 = true;}
+            if (i == 9){field_part10 = field.subList(9*l, 10*l); fp10 = true;}
+            if (i == 10){field_part11 = field.subList(10*l, 11*l); fp11 = true;}
+            if (i == 11){field_part12 = field.subList(11*l, 12*l); fp12 = true;}
+            if (i == 12){field_part13 = field.subList(12*l, 13*l); fp13 = true;}
+            if (i == 13){field_part14 = field.subList(13*l, 14*l); fp14 = true;}
+            if (i == 14){field_part15 = field.subList(14*l, 15*l); fp15 = true;}
+            if (i == 15){field_part16 = field.subList(15*l, 16*l); fp16 = true;}
+            if (i == 16){field_part17 = field.subList(16*l, 17*l); fp17 = true;}
+            if (i == 17){field_part18 = field.subList(17*l, 18*l); fp18 = true;}
+            if (i == 18){field_part19 = field.subList(18*l, 19*l); fp19 = true;}
+            if (i == 19){field_part20 = field.subList(19*l, 20*l); fp20 = true;}
+            if (i == 20){field_part21 = field.subList(20*l, 21*l); fp21 = true;}
+            if (i == 21){field_part22 = field.subList(21*l, 22*l); fp22 = true;}
             if (i >= 22){System.err.println("Index out of range - Rätsel zu lang, maximal 22 Zeilen!");}
 			
-		}
-			System.out.println(field_part1);
+	}
+	if(fp1==true)System.out.println(field_part1);
+	if(fp2==true)System.out.println(field_part2);
+	if(fp3==true)System.out.println(field_part3);
+	if(fp4==true)System.out.println(field_part4);
+	if(fp5==true)System.out.println(field_part5);
+	if(fp6==true)System.out.println(field_part6);
+	if(fp7==true)System.out.println(field_part7);
+	if(fp8==true)System.out.println(field_part8);
+	if(fp9==true)System.out.println(field_part9);
+	if(fp10==true)System.out.println(field_part10);
+	if(fp11==true)System.out.println(field_part11);
+	if(fp12==true)System.out.println(field_part12);
+	if(fp13==true)System.out.println(field_part13);
+	if(fp14==true)System.out.println(field_part14);
+	if(fp15==true)System.out.println(field_part15);
+	if(fp16==true)System.out.println(field_part16);
+	if(fp17==true)System.out.println(field_part17);
+	if(fp18==true)System.out.println(field_part18);
+	if(fp19==true)System.out.println(field_part19);
+	if(fp20==true)System.out.println(field_part20);
+	if(fp21==true)System.out.println(field_part21);
+	if(fp22==true)System.out.println(field_part22);
 			for(int x=0; x < l; x++){           //Für jedes Zeichen
 					
 				
