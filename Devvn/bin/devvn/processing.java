@@ -53,7 +53,30 @@ static List<String> field_part19;
 static List<String> field_part20;
 static List<String> field_part21;
 static List<String> field_part22;
-		
+static List<String> proto_output1;
+static List<String> proto_output2;
+static List<String> proto_output3;
+static List<String> proto_output4;
+static List<String> proto_output5;
+static List<String> proto_output6;
+static List<String> proto_output7;
+static List<String> proto_output8;
+static List<String> proto_output9;
+static List<String> proto_output10;
+static List<String> proto_output11;
+static List<String> proto_output12;
+static List<String> proto_output13;
+static List<String> proto_output14;
+static List<String> proto_output15;
+static List<String> proto_output16;
+static List<String> proto_output17;
+static List<String> proto_output18;
+static List<String> proto_output19;
+static List<String> proto_output20;
+static List<String> proto_output21;
+static List<String> proto_output22;
+
+static int rows;
 static String number_docking = "";
 static String letter_docking = "";
 static int number;
@@ -120,29 +143,14 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
             if (i >= 22){System.err.println("Index out of range - Rätsel zu lang, maximal 22 Zeilen!");}
 			
 	}
-	if(fp1==true)System.out.println(field_part1);
-	if(fp2==true)System.out.println(field_part2);
-	if(fp3==true)System.out.println(field_part3);
-	if(fp4==true)System.out.println(field_part4);
-	if(fp5==true)System.out.println(field_part5);
-	if(fp6==true)System.out.println(field_part6);
-	if(fp7==true)System.out.println(field_part7);
-	if(fp8==true)System.out.println(field_part8);
-	if(fp9==true)System.out.println(field_part9);
-	if(fp10==true)System.out.println(field_part10);
-	if(fp11==true)System.out.println(field_part11);
-	if(fp12==true)System.out.println(field_part12);
-	if(fp13==true)System.out.println(field_part13);
-	if(fp14==true)System.out.println(field_part14);
-	if(fp15==true)System.out.println(field_part15);
-	if(fp16==true)System.out.println(field_part16);
-	if(fp17==true)System.out.println(field_part17);
-	if(fp18==true)System.out.println(field_part18);
-	if(fp19==true)System.out.println(field_part19);
-	if(fp20==true)System.out.println(field_part20);
-	if(fp21==true)System.out.println(field_part21);
-	if(fp22==true)System.out.println(field_part22);
-			for(int x=0; x < l; x++){           //Für jedes Zeichen
+	
+	
+	
+	
+	
+	output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);
+
+	for(int x=0; x < l; x++){           //Für jedes Zeichen
 					
 				
 			}
