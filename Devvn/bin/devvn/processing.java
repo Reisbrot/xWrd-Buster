@@ -146,10 +146,10 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 		System.out.println(field_part1);
 		for(int i = 0; i < letters.length; i++){
 				Character character = letters[i];
-				int replacement = field_part1.indexOf(i+1);
+				int replacement = field_part1.indexOf(""+(i+1));
 				if(replacement != -1){
 				String c = field_part1.get(replacement);
-				System.out.println("blah" + c);
+				System.out.println("blah" + c + ", " + replacement);
 				}
 		}
 
