@@ -84,7 +84,7 @@ static int[] numbers;
 static char[] cleaned_letters;
 
 @SuppressWarnings("all")
-static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list) {
+static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list, boolean dm) {
 	
 	Arrays.fill(letters, 0, letters.length, ' ');
 	
@@ -112,7 +112,7 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 		letters[numbers[i]-1] = cleaned_letters[i]; 
 	}
 
-	System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
+if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
 
 
 	for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
@@ -143,13 +143,13 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
             if (i >= 22){System.err.println("Index out of range - Rätsel zu lang, maximal 22 Zeilen!");}
 			
 	}
-		System.out.println(field_part1);
+if(dm)	System.out.println(field_part1);
 		for(int i = 0; i < letters.length; i++){
 				Character character = letters[i];
 				int replacement = field_part1.indexOf(""+(i+1));
 				if(replacement != -1){
 				String c = field_part1.get(replacement);
-				System.out.println("blah" + c + ", " + replacement);
+if(dm)			System.out.println("blah" + c + " auf " + replacement);
 				}
 		}
 
