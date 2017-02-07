@@ -2,10 +2,7 @@ package devvn;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class processing {
 	
@@ -145,14 +142,13 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 	}
 if(dm)	System.out.println(field_part1);
 		for(int i = 0; i < letters.length; i++){
-			while(true){
-				x = frequency();
+				int f = Collections.frequency(field_part1, ""+(i+1));
+if(dm)			System.out.println(i+1 + " ist " + f + "x vorhanden");
 				Character character = letters[i];
 				int replacement = field_part1.indexOf(""+(i+1));
 				if(replacement != -1){
 				String c = field_part1.get(replacement);
 if(dm)			System.out.println("blah" + c + " auf " + replacement);
-				}else{break;}
 		    }	
 		}
 
@@ -186,16 +182,6 @@ public static List<String> readFile(String fileName) {
 	return null;
   }
 
-public static int frequency(String source, String part){
- if(source == null||source.isEmpty()||part.isEmpty()||part == null)return -1;
- 
-  int count = 0;
-	
-  for(int pos = 0; (pos = source.indexOf(part, pos)) != -1; count++)
-	  pos += part.length();  
-  
-  return count;
- }
 
 
 }
