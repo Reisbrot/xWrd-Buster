@@ -73,6 +73,9 @@ static List<String> proto_output20;
 static List<String> proto_output21;
 static List<String> proto_output22;
 
+static HashMap<Integer,List<Integer>> posMap = new HashMap<Integer, List<Integer>>();
+static HashMap<Integer,String> startMap = new HashMap<Integer, String>();
+static List<Integer> bufferList = new ArrayList<Integer>();
 static int rows;
 static String number_docking = "";
 static String letter_docking = "";
@@ -140,6 +143,7 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
             if (i >= 22){System.err.println("Index out of range - Rätsel zu lang, maximal 22 Zeilen!");}
 			
 	}
+	/*
 if(dm)	System.out.println(field_part1);
 		for(int i = 0; i < letters.length; i++){
 				int f = Collections.frequency(field_part1, ""+(i+1));
@@ -151,15 +155,23 @@ if(dm)			System.out.println(i+1 + " ist " + f + "x vorhanden");
 if(dm)			System.out.println("blah" + c + " auf " + replacement);
 		    }	
 		}
+	*/
+if(dm)	        System.out.println(field_part1);
+	Integer key = 0;
+	for(int i = 0; i < field_part1.size(); i++){
+		key++;
+			for(int x = 0; x < letters.length; x++){
+				if (field_part1.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){;bufferList.add(Integer.parseInt(field_part1.get(i)));}else{/*TODO Werte stimmen überein - was tun?*/;}}
+	        }
+		if(!bufferList.isEmpty())
+		posMap.put(key, bufferList);
+if(dm)	System.out.println(posMap.get(key));
+		bufferList.clear();
+    }
 
-	output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);
 
-	for(int x=0; x < l; x++){           //Für jedes Zeichen
-					
-				
-			}
-			
-	}
+	output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
+    }
 
 
 
