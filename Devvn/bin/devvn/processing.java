@@ -145,12 +145,15 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 	}
 if(dm)	System.out.println(field_part1);
 		for(int i = 0; i < letters.length; i++){
+			while(true){
+				x = frequency();
 				Character character = letters[i];
 				int replacement = field_part1.indexOf(""+(i+1));
 				if(replacement != -1){
 				String c = field_part1.get(replacement);
 if(dm)			System.out.println("blah" + c + " auf " + replacement);
-				}
+				}else{break;}
+		    }	
 		}
 
 	output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);
@@ -182,6 +185,18 @@ public static List<String> readFile(String fileName) {
     }
 	return null;
   }
+
+public static int frequency(String source, String part){
+ if(source == null||source.isEmpty()||part.isEmpty()||part == null)return -1;
+ 
+  int count = 0;
+	
+  for(int pos = 0; (pos = source.indexOf(part, pos)) != -1; count++)
+	  pos += part.length();  
+  
+  return count;
+ }
+
 
 }
 
