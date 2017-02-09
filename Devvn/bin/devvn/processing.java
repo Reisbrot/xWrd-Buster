@@ -178,7 +178,6 @@ public static List<String> readFile(String fileName) {
 
 public static void replacing(boolean dm, char[] letters, Integer key){
 if (fp1){
-	if(dm)	        System.out.println(field_part1);
 	key = 0;
 	for(int i = 0; i < field_part1.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -198,7 +197,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp2){	
-	if(dm)	        System.out.println(field_part2); 
 	key = 1; 
 	for(int i = 0; i < field_part2.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -218,7 +216,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp3){
-	if(dm)	        System.out.println(field_part3); 
 	key = 2; 
 	for(int i = 0; i < field_part3.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -238,7 +235,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp4){	
-	if(dm)	        System.out.println(field_part4); 
 	key = 3; 
 	for(int i = 0; i < field_part4.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -257,7 +253,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp5){
-	if(dm)	        System.out.println(field_part5); 
 	key = 4; 
 	for(int i = 0; i < field_part5.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -276,7 +271,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp6){	
-	if(dm)	        System.out.println(field_part6); 
 	key = 5; 
 	for(int i = 0; i < field_part6.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -295,7 +289,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp7){	
-	if(dm)	        System.out.println(field_part7); 
 	key = 6; 
 	for(int i = 0; i < field_part7.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -314,7 +307,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp8){	
-	if(dm)	        System.out.println(field_part8); 
 	key = 7; 
 	for(int i = 0; i < field_part8.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -333,7 +325,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp9){	
-	if(dm)	        System.out.println(field_part9); 
 	key = 8; 
 	for(int i = 0; i < field_part9.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -352,7 +343,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp10){
-	if(dm)	        System.out.println(field_part10); 
 	key = 9; 
 	for(int i = 0; i < field_part10.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -371,7 +361,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp11){
-	if(dm)	        System.out.println(field_part11); 
 	key = 10; 
 	for(int i = 0; i < field_part11.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -390,7 +379,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp12){	
-	if(dm)	        System.out.println(field_part12); 
 	key = 11; 
 	for(int i = 0; i < field_part12.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -409,7 +397,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp13){
-	if(dm)	        System.out.println(field_part13); 
 	key = 12; 
 	for(int i = 0; i < field_part13.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -428,7 +415,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp14){
-	if(dm)	        System.out.println(field_part14); 
 	key = 13; 
 	for(int i = 0; i < field_part14.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -447,7 +433,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp15){
-	if(dm)	        System.out.println(field_part15); 
 	key = 14; 
 	for(int i = 0; i < field_part15.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -466,7 +451,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp16){
-	if(dm)	        System.out.println(field_part16); 
 	key = 15; 
 	for(int i = 0; i < field_part16.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -485,7 +469,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 
 if (fp17){
-	if(dm)	        System.out.println(field_part17); 
 	key = 16; 
 	for(int i = 0; i < field_part17.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -504,7 +487,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp18){
-	if(dm)	        System.out.println(field_part18); 
 	key = 17; 
 	for(int i = 0; i < field_part18.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -523,7 +505,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp19){
-	if(dm)	        System.out.println(field_part19); 
 	key = 18; 
 	for(int i = 0; i < field_part19.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -542,7 +523,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp20){
-	if(dm)	        System.out.println(field_part20); 
 	key = 19; 
 	for(int i = 0; i < field_part20.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -560,8 +540,7 @@ if(dm)	System.out.println(posMap.get(key));
 }
 	
 	
-if (fp21){
-	if(dm)	        System.out.println(field_part21); 
+if (fp21){ 
 	key = 20; 
 	for(int i = 0; i < field_part21.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -580,7 +559,6 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 if (fp22){
-	if(dm)	        System.out.println(field_part22); 
 	key = 21; 
 	for(int i = 0; i < field_part22.size(); i++){
 			for(int x = 0; x < letters.length; x++){
