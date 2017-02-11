@@ -6,73 +6,8 @@ import java.util.*;
 
 public class processing {
 	
-static boolean fp1;
-static boolean fp2;
-static boolean fp3;
-static boolean fp4;
-static boolean fp5;
-static boolean fp6;
-static boolean fp7;
-static boolean fp8;
-static boolean fp9;
-static boolean fp10;
-static boolean fp11;
-static boolean fp12;
-static boolean fp13;
-static boolean fp14;
-static boolean fp15;
-static boolean fp16;
-static boolean fp17;
-static boolean fp18;
-static boolean fp19;
-static boolean fp20;
-static boolean fp21;
-static boolean fp22;
-static List<String> field_part1;
-static List<String> field_part2;
-static List<String> field_part3;
-static List<String> field_part4;
-static List<String> field_part5;
-static List<String> field_part6;
-static List<String> field_part7;
-static List<String> field_part8;
-static List<String> field_part9;
-static List<String> field_part10;
-static List<String> field_part11;
-static List<String> field_part12;
-static List<String> field_part13;
-static List<String> field_part14;
-static List<String> field_part15;
-static List<String> field_part16;
-static List<String> field_part17;
-static List<String> field_part18;
-static List<String> field_part19;
-static List<String> field_part20;
-static List<String> field_part21;
-static List<String> field_part22;
-static List<String> proto_output1;
-static List<String> proto_output2;
-static List<String> proto_output3;
-static List<String> proto_output4;
-static List<String> proto_output5;
-static List<String> proto_output6;
-static List<String> proto_output7;
-static List<String> proto_output8;
-static List<String> proto_output9;
-static List<String> proto_output10;
-static List<String> proto_output11;
-static List<String> proto_output12;
-static List<String> proto_output13;
-static List<String> proto_output14;
-static List<String> proto_output15;
-static List<String> proto_output16;
-static List<String> proto_output17;
-static List<String> proto_output18;
-static List<String> proto_output19;
-static List<String> proto_output20;
-static List<String> proto_output21;
-static List<String> proto_output22;
-
+static boolean fp1,fp2,fp3,fp4,fp5,fp6,fp7,fp8,fp9,fp10,fp11,fp12,fp13,fp14,fp15,fp16,fp17,fp18,fp19,fp20,fp21,fp22;
+static List<String> field_part1, field_part2, field_part3, field_part4, field_part5, field_part6, field_part7, field_part8, field_part9, field_part10, field_part11, field_part12, field_part13, field_part14, field_part15, field_part16, field_part17, field_part18, field_part19, field_part20, field_part21, field_part22;
 static Integer key;
 static HashMap<Integer,List<String>> posMap = new HashMap<Integer, List<String>>();
 static HashMap<Integer,String> startMap = new HashMap<Integer, String>();
@@ -147,7 +82,7 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 	}
 	replacing(dm, letters, key);
 	
-	output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
+	//output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
     }
 
 
