@@ -512,7 +512,8 @@ if(dm)	System.out.println(posMap.get(key));
 	
 	
 	
-	
+if(dm)	    System.out.println("www. " + posMap);
+System.out.println(posMap.get(21));	
 }
 
 
