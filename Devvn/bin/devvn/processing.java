@@ -20,6 +20,7 @@ static int number;
 static int[] numbers;
 static char[] cleaned_letters;
 
+
 @SuppressWarnings("all")
 static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list, boolean dm) {
 	
@@ -113,7 +114,8 @@ public static List<String> readFile(String fileName) {
 
 
 
-public static void replacing(boolean dm, char[] letters, Integer key, List<String> part, boolean fp){
+public static List<String> replacing(boolean dm, char[] letters, Integer key, List<String> part, boolean fp){
+List<String> returned = new ArrayList<String>();
 if (fp){
 	for(int i = 0; i < part.size(); i++){
 			for(int x = 0; x < letters.length; x++){
@@ -123,62 +125,114 @@ if (fp){
 			}
 			bufferList.add(bufferLetter);
 			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
 
-	}	  
+    }
+	returned.addAll(bufferList);
+	bufferList.clear();
+		return returned;
+
+
+	//posMap.put(key, bufferList);
+//if(dm)	System.out.println(posMap.get(key));
+//	bufferList.clear();
+
+	}
+return null;
+
 }
 
 
 
 	public static void replacing_replacing(boolean dm, char[] letters){
-		replacing(dm, letters, key, field_part1, fp1);
+		field_part1 = replacing(dm, letters, key, field_part1, fp1);
+		posMap.put(key, field_part1);
 		key++;
-		replacing(dm, letters, key, field_part2, fp2);
+		
+		field_part2 = replacing(dm, letters, key, field_part2, fp2);
+		posMap.put(key, field_part2);
 		key++;
-		replacing(dm, letters, key, field_part3, fp3);	
+		
+		field_part3 = replacing(dm, letters, key, field_part3, fp3);
+		posMap.put(key, field_part3);
 		key++;
-		replacing(dm, letters, key, field_part4, fp4);
+		
+		field_part4 = replacing(dm, letters, key, field_part4, fp4);
+		posMap.put(key, field_part4);
 		key++;
-		replacing(dm, letters, key, field_part5, fp5);	
+		
+		field_part5 = replacing(dm, letters, key, field_part5, fp5);
+		posMap.put(key, field_part5);
 		key++;
-		replacing(dm, letters, key, field_part6, fp6);	
+		
+		field_part6 = replacing(dm, letters, key, field_part6, fp6);
+		posMap.put(key, field_part6);
 		key++;
-		replacing(dm, letters, key, field_part7, fp7);
+		
+		field_part7 = replacing(dm, letters, key, field_part7, fp7);
+		posMap.put(key, field_part7);
 		key++;
-		replacing(dm, letters, key, field_part8, fp8);
+		
+		field_part8 = replacing(dm, letters, key, field_part8, fp8);
+		posMap.put(key, field_part8);
 		key++;
-		replacing(dm, letters, key, field_part9, fp9);	
+		
+		field_part9 = replacing(dm, letters, key, field_part9, fp9);
+		posMap.put(key, field_part9);
 		key++;
-		replacing(dm, letters, key, field_part10, fp10);	
+		
+		field_part10 = replacing(dm, letters, key, field_part10, fp10);
+		posMap.put(key, field_part10);
 		key++;
-		replacing(dm, letters, key, field_part11, fp11);	
+		
+		field_part11 = replacing(dm, letters, key, field_part11, fp11);
+		posMap.put(key, field_part11);
 		key++;
-		replacing(dm, letters, key, field_part12, fp12);	
+		
+		field_part12 = replacing(dm, letters, key, field_part12, fp12);
+		posMap.put(key, field_part12);
 		key++;
-		replacing(dm, letters, key, field_part13, fp13);
+		
+		field_part13 = replacing(dm, letters, key, field_part13, fp13);
+		posMap.put(key, field_part13);
 		key++;
-		replacing(dm, letters, key, field_part14, fp14);	
+		
+		field_part14 = replacing(dm, letters, key, field_part14, fp14);
+		posMap.put(key, field_part14);
 		key++;
-		replacing(dm, letters, key, field_part15, fp15);	
+		
+		field_part15 = replacing(dm, letters, key, field_part15, fp15);
+		posMap.put(key, field_part15);
 		key++;
-		replacing(dm, letters, key, field_part16, fp16);	
+		
+		field_part16 = replacing(dm, letters, key, field_part16, fp16);
+		posMap.put(key, field_part16);
 		key++;
-		replacing(dm, letters, key, field_part17, fp17);
+		
+		field_part17 = replacing(dm, letters, key, field_part17, fp17);
+		posMap.put(key, field_part17);
 		key++;
-		replacing(dm, letters, key, field_part18, fp18);	
+		
+		field_part18 = replacing(dm, letters, key, field_part18, fp18);
+		posMap.put(key, field_part18);
 		key++;
-		replacing(dm, letters, key, field_part19, fp19);	
+
+		field_part19 = replacing(dm, letters, key, field_part19, fp19);
+		posMap.put(key, field_part19);
 		key++;
-		replacing(dm, letters, key, field_part20, fp20);	
+		
+		field_part20 = replacing(dm, letters, key, field_part20, fp20);
+		posMap.put(key, field_part20);
 		key++;
-		replacing(dm, letters, key, field_part21, fp21);	
+		
+		field_part21 = replacing(dm, letters, key, field_part21, fp21);
+		posMap.put(key, field_part21);
 		key++;
-		replacing(dm, letters, key, field_part22, fp22);	
+		
+		field_part22 = replacing(dm, letters, key, field_part22, fp22);
+		posMap.put(key, field_part22);
 		key++;
+		
+		System.out.println(posMap);
 	}
 
 
