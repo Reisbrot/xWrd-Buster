@@ -8,7 +8,7 @@ public class processing {
 	
 static boolean fp1,fp2,fp3,fp4,fp5,fp6,fp7,fp8,fp9,fp10,fp11,fp12,fp13,fp14,fp15,fp16,fp17,fp18,fp19,fp20,fp21,fp22;
 static List<String> field_part1, field_part2, field_part3, field_part4, field_part5, field_part6, field_part7, field_part8, field_part9, field_part10, field_part11, field_part12, field_part13, field_part14, field_part15, field_part16, field_part17, field_part18, field_part19, field_part20, field_part21, field_part22;
-static Integer key;
+static Integer key = 0;
 static HashMap<Integer,List<String>> posMap = new HashMap<Integer, List<String>>();
 static HashMap<Integer,String> startMap = new HashMap<Integer, String>();
 static String bufferLetter = "";
@@ -80,7 +80,9 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
             if (i >= 22){System.err.println("Index out of range - Rätsel zu lang, maximal 22 Zeilen!");}
 			
 	}
-	replacing(dm, letters, key);
+	replacing_replacing(dm, letters);
+
+	
 	
 	//output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
     }
@@ -111,12 +113,11 @@ public static List<String> readFile(String fileName) {
 
 
 
-public static void replacing(boolean dm, char[] letters, Integer key){
-if (fp1){
-	key = 0;
-	for(int i = 0; i < field_part1.size(); i++){
+public static void replacing(boolean dm, char[] letters, Integer key, List<String> part, boolean fp){
+if (fp){
+	for(int i = 0; i < part.size(); i++){
 			for(int x = 0; x < letters.length; x++){
-				if (field_part1.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part1.get(i));}
+				if (part.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(part.get(i));}
 				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
 
 			}
@@ -128,399 +129,60 @@ if (fp1){
 if(dm)	System.out.println(posMap.get(key));
 	bufferList.clear();
 
-}	  
-	
-	
-if (fp2){	
-	key = 1; 
-	for(int i = 0; i < field_part2.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part2.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part2.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-
-}	
-	
-	
-if (fp3){
-	key = 2; 
-	for(int i = 0; i < field_part3.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part3.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part3.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-	
-}
-	
-	
-if (fp4){	
-	key = 3; 
-	for(int i = 0; i < field_part4.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part4.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part4.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}	
-	
-	
-if (fp5){
-	key = 4; 
-	for(int i = 0; i < field_part5.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part5.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part5.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}	
-	
-	
-if (fp6){	
-	key = 5; 
-	for(int i = 0; i < field_part6.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part6.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part6.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}	
-	
-	
-if (fp7){	
-	key = 6; 
-	for(int i = 0; i < field_part7.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part7.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part7.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}	
-	
-	
-if (fp8){	
-	key = 7; 
-	for(int i = 0; i < field_part8.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part8.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part8.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}	
-	
-	
-if (fp9){	
-	key = 8; 
-	for(int i = 0; i < field_part9.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part9.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part9.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}	
-	
-	
-if (fp10){
-	key = 9; 
-	for(int i = 0; i < field_part10.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part10.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part10.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp11){
-	key = 10; 
-	for(int i = 0; i < field_part11.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part11.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part11.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp12){	
-	key = 11; 
-	for(int i = 0; i < field_part12.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part12.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part12.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp13){
-	key = 12; 
-	for(int i = 0; i < field_part13.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part13.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part13.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp14){
-	key = 13; 
-	for(int i = 0; i < field_part14.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part14.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part14.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp15){
-	key = 14; 
-	for(int i = 0; i < field_part15.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part15.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part15.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp16){
-	key = 15; 
-	for(int i = 0; i < field_part16.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part16.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part16.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-
-if (fp17){
-	key = 16; 
-	for(int i = 0; i < field_part17.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part17.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part17.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp18){
-	key = 17; 
-	for(int i = 0; i < field_part18.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part18.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part18.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp19){
-	key = 18; 
-	for(int i = 0; i < field_part19.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part19.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part19.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp20){
-	key = 19; 
-	for(int i = 0; i < field_part20.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part20.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part20.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp21){ 
-	key = 20; 
-	for(int i = 0; i < field_part21.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part21.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part21.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-if (fp22){
-	key = 21; 
-	for(int i = 0; i < field_part22.size(); i++){
-			for(int x = 0; x < letters.length; x++){
-				if (field_part22.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(field_part22.get(i));}
-				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
-
-			}
-			bufferList.add(bufferLetter);
-			bufferLetter = "";
-    }
-	if(!bufferList.isEmpty())
-	posMap.put(key, bufferList);
-if(dm)	System.out.println(posMap.get(key));
-	bufferList.clear();
-}
-	
-	
-	
-if(dm)	    System.out.println("www. " + posMap);
-System.out.println(posMap.get(21));	
+	}	  
 }
 
 
 
+	public static void replacing_replacing(boolean dm, char[] letters){
+		replacing(dm, letters, key, field_part1, fp1);
+		key++;
+		replacing(dm, letters, key, field_part2, fp2);
+		key++;
+		replacing(dm, letters, key, field_part3, fp3);	
+		key++;
+		replacing(dm, letters, key, field_part4, fp4);
+		key++;
+		replacing(dm, letters, key, field_part5, fp5);	
+		key++;
+		replacing(dm, letters, key, field_part6, fp6);	
+		key++;
+		replacing(dm, letters, key, field_part7, fp7);
+		key++;
+		replacing(dm, letters, key, field_part8, fp8);
+		key++;
+		replacing(dm, letters, key, field_part9, fp9);	
+		key++;
+		replacing(dm, letters, key, field_part10, fp10);	
+		key++;
+		replacing(dm, letters, key, field_part11, fp11);	
+		key++;
+		replacing(dm, letters, key, field_part12, fp12);	
+		key++;
+		replacing(dm, letters, key, field_part13, fp13);
+		key++;
+		replacing(dm, letters, key, field_part14, fp14);	
+		key++;
+		replacing(dm, letters, key, field_part15, fp15);	
+		key++;
+		replacing(dm, letters, key, field_part16, fp16);	
+		key++;
+		replacing(dm, letters, key, field_part17, fp17);
+		key++;
+		replacing(dm, letters, key, field_part18, fp18);	
+		key++;
+		replacing(dm, letters, key, field_part19, fp19);	
+		key++;
+		replacing(dm, letters, key, field_part20, fp20);	
+		key++;
+		replacing(dm, letters, key, field_part21, fp21);	
+		key++;
+		replacing(dm, letters, key, field_part22, fp22);	
+		key++;
+	}
+
+
 }
-
-
 
 
 
