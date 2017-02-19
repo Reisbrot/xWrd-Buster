@@ -45,15 +45,8 @@ public class idk {
 					
 					
 				for(int i = 0; i < list.size(); i++){
-					if(list.get(i).length() == (length - anfang - ende) /*?*/){
-				  
-						for(int y = 0; y < length; y++){
-							if(!posMap.get(a).get(y).equals(""))                                                           //!posMap.get(a).get(y).isEmpty() && 
-								if(Character.isAlphabetic(posMap.get(a).get(y).charAt(0))){
-									if(list.get(i).charAt(0 /*?*/) == posMap.get(a).get(y).charAt(0)){
-										System.out.println(list.get(i));
-									}}
-						}
+					if(list.get(i).length() == (length - anfang - ende)){
+						System.out.println(list.get(i));
 					
 					}
 			
