@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+import sun.security.util.Length;
+
 public class processing {
 	
 static boolean fp1,fp2,fp3,fp4,fp5,fp6,fp7,fp8,fp9,fp10,fp11,fp12,fp13,fp14,fp15,fp16,fp17,fp18,fp19,fp20,fp21,fp22;
@@ -19,6 +21,8 @@ static String letter_docking = "";
 static int number;
 static int[] numbers;
 static char[] cleaned_letters;
+static int posMap_length = 0;
+static List<String> difault = new ArrayList<String>();
 
 
 @SuppressWarnings("all")
@@ -83,7 +87,11 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 	}
 	replacing_replacing(dm, letters);
 	
-    idk.main(posMap, list);
+	for(int i = 0; i < posMap.size(); i++){
+		if(!posMap.get(i).equals("")) posMap_length++;
+	}
+	
+    idk.main(posMap, list, dm, posMap_length);
 	
 	//output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
     }
@@ -137,7 +145,7 @@ if (fp){
 //	bufferList.clear();
 
 	}
-return null;
+return difault;
 
 }
 
