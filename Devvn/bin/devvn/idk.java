@@ -55,6 +55,8 @@ public class idk {
 				}
 				System.out.println(wordlength + " Wordlängdh");
 				wordlength = 0;
+				zeichen_folge = 0;
+				zeichen_gesamt = 0;
 				wordpositions.clear();
 				seppositions.clear();
 			}
