@@ -85,7 +85,7 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 			
 	}
 	replacing_replacing(dm, letters);
-	vertical_part1 = toVertical(vertical_part1);
+	vertical_part1 = toVertical();
 	System.out.println(vertical_part1);
 	
 	for(int i = 0; i < posMap.size(); i++){
@@ -246,7 +246,8 @@ public static void replacing_replacing(boolean dm, char[] letters){
 	}
 
 
-public static List<String> toVertical(List<String> vertical){
+public static List<String> toVertical(){
+	List<String> vertical = new ArrayList<String>();
 	for(int waldquell = 0; waldquell < field_part1.size(); waldquell++){
 	if(!fp1) System.out.println("Iwas is da kaputt");
 	if(!fp2) System.out.println("Iwas is da kaputt");
@@ -257,19 +258,19 @@ public static List<String> toVertical(List<String> vertical){
 	if(!fp7) System.out.println("Iwas is da kaputt");
 	if(!fp8) System.out.println("Iwas is da kaputt");
 	if(!fp9) System.out.println("Iwas is da kaputt");
-	if(!fp10) for(int i = 0; i < 10; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp11) for(int i = 0; i < 11; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp12) for(int i = 0; i < 12; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp13) for(int i = 0; i < 13; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp14) for(int i = 0; i < 14; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp15) for(int i = 0; i < 15; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp16) for(int i = 0; i < 16; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp17) for(int i = 0; i < 17; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp18) for(int i = 0; i < 18; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp19) for(int i = 0; i < 19; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp20) for(int i = 0; i < 20; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp21) for(int i = 0; i < 21; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp22) for(int i = 0; i < 22; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp10) for(int i = 0; i < 7; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp11) for(int i = 0; i < 8; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp12) for(int i = 0; i < 9; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp13) for(int i = 0; i < 10; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp14) for(int i = 0; i < 11; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp15) for(int i = 0; i < 12; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp16) for(int i = 0; i < 13; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp17) for(int i = 0; i < 14; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp18) for(int i = 0; i < 15; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp19) for(int i = 0; i < 16; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp20) for(int i = 0; i < 17; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp21) for(int i = 0; i < 18; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp22) for(int i = 0; i < 19; i++){vertical.add(posMap.get(i).get(waldquell));}
 	}
 	return vertical;
 }
