@@ -50,10 +50,10 @@ public class idk {
 				}
 				for(int wp = 0; wp < wordpositions.size(); wp++){
 					for(int sp = 0; sp < seppositions.size(); sp++){
-						if(wordpositions.get(wp) < seppositions.get(sp)){if(wordlength == 0)wordlength = seppositions.get(sp) - wordpositions.get(wp); else{wordlength2 = seppositions.get(sp) - wordpositions.get(wp);}; break;}
+						if(wordpositions.get(wp) < seppositions.get(sp)){if(wordlength == 0){wordlength = seppositions.get(sp) - wordpositions.get(wp) - 1; break;} else{wordlength2 = seppositions.get(sp) - wordpositions.get(wp) - 1;}; break;}
 					}
 				}
-				System.out.println(wordlength + " Wordlängdh");
+				System.out.println(wordlength + "  " + wordlength2 + " Wordlängdhs");
 				wordlength = 0;
 				zeichen_folge = 0;
 				zeichen_gesamt = 0;

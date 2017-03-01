@@ -4,12 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-import sun.security.util.Length;
-
 public class processing {
 	
 static boolean fp1,fp2,fp3,fp4,fp5,fp6,fp7,fp8,fp9,fp10,fp11,fp12,fp13,fp14,fp15,fp16,fp17,fp18,fp19,fp20,fp21,fp22;
 static List<String> field_part1, field_part2, field_part3, field_part4, field_part5, field_part6, field_part7, field_part8, field_part9, field_part10, field_part11, field_part12, field_part13, field_part14, field_part15, field_part16, field_part17, field_part18, field_part19, field_part20, field_part21, field_part22;
+static List<String> vertical_part1, vertical_part2, vertical_part3, vertical_part4, vertical_part5, vertical_part6, vertical_part7, vertical_part8, vertical_part9, vertical_part10, vertical_part11, vertical_part12, vertical_part13, vertical_part14, vertical_part15, vertical_part16, vertical_part17, vertical_part18, vertical_part19, vertical_part20, vertical_part21, vertical_part22;
 static Integer key = 0;
 static HashMap<Integer,List<String>> posMap = new HashMap<Integer, List<String>>();
 static HashMap<Integer,String> startMap = new HashMap<Integer, String>();
@@ -86,6 +85,8 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 			
 	}
 	replacing_replacing(dm, letters);
+	vertical_part1 = toVertical(vertical_part1);
+	System.out.println(vertical_part1);
 	
 	for(int i = 0; i < posMap.size(); i++){
 		if(!posMap.get(i).equals("")) posMap_length++;
@@ -151,7 +152,8 @@ return difault;
 
 
 
-	public static void replacing_replacing(boolean dm, char[] letters){
+public static void replacing_replacing(boolean dm, char[] letters){
+
 		field_part1 = replacing(dm, letters, key, field_part1, fp1);
 		posMap.put(key, field_part1);
 		key++;
@@ -242,6 +244,35 @@ return difault;
 		
 		System.out.println(posMap);
 	}
+
+
+public static List<String> toVertical(List<String> vertical){
+	for(int waldquell = 0; waldquell < field_part1.size(); waldquell++){
+	if(!fp1) System.out.println("Iwas is da kaputt");
+	if(!fp2) System.out.println("Iwas is da kaputt");
+	if(!fp3) System.out.println("Iwas is da kaputt");
+	if(!fp4) System.out.println("Iwas is da kaputt");
+	if(!fp5) System.out.println("Iwas is da kaputt");
+	if(!fp6) System.out.println("Iwas is da kaputt");
+	if(!fp7) System.out.println("Iwas is da kaputt");
+	if(!fp8) System.out.println("Iwas is da kaputt");
+	if(!fp9) System.out.println("Iwas is da kaputt");
+	if(!fp10) for(int i = 0; i < 10; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp11) for(int i = 0; i < 11; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp12) for(int i = 0; i < 12; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp13) for(int i = 0; i < 13; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp14) for(int i = 0; i < 14; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp15) for(int i = 0; i < 15; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp16) for(int i = 0; i < 16; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp17) for(int i = 0; i < 17; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp18) for(int i = 0; i < 18; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp19) for(int i = 0; i < 19; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp20) for(int i = 0; i < 20; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp21) for(int i = 0; i < 21; i++){vertical.add(posMap.get(i).get(waldquell));}
+	if(!fp22) for(int i = 0; i < 22; i++){vertical.add(posMap.get(i).get(waldquell));}
+	}
+	return vertical;
+}
 
 
 }
