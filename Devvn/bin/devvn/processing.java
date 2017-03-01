@@ -9,8 +9,10 @@ public class processing {
 static boolean fp1,fp2,fp3,fp4,fp5,fp6,fp7,fp8,fp9,fp10,fp11,fp12,fp13,fp14,fp15,fp16,fp17,fp18,fp19,fp20,fp21,fp22;
 static List<String> field_part1, field_part2, field_part3, field_part4, field_part5, field_part6, field_part7, field_part8, field_part9, field_part10, field_part11, field_part12, field_part13, field_part14, field_part15, field_part16, field_part17, field_part18, field_part19, field_part20, field_part21, field_part22;
 static List<String> vertical_part1, vertical_part2, vertical_part3, vertical_part4, vertical_part5, vertical_part6, vertical_part7, vertical_part8, vertical_part9, vertical_part10, vertical_part11, vertical_part12, vertical_part13, vertical_part14, vertical_part15, vertical_part16, vertical_part17, vertical_part18, vertical_part19, vertical_part20, vertical_part21, vertical_part22;
-static Integer key = 0;
-static HashMap<Integer,List<String>> posMap = new HashMap<Integer, List<String>>();
+static Integer keyV = 0;
+static Integer keyH = 0;
+static HashMap<Integer,List<String>> hrzMap = new HashMap<Integer, List<String>>();
+static HashMap<Integer,List<String>> verMap = new HashMap<Integer, List<String>>();
 static HashMap<Integer,String> startMap = new HashMap<Integer, String>();
 static String bufferLetter = "";
 static List<String> bufferList = new ArrayList<String>();
@@ -20,7 +22,7 @@ static String letter_docking = "";
 static int number;
 static int[] numbers;
 static char[] cleaned_letters;
-static int posMap_length = 0;
+static int hrzMap_length = 0;
 static List<String> difault = new ArrayList<String>();
 
 
@@ -85,14 +87,13 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 			
 	}
 	replacing_replacing(dm, letters);
-	vertical_part1 = toVertical();
-	System.out.println(vertical_part1);
+	verticalice(dm);
 	
-	for(int i = 0; i < posMap.size(); i++){
-		if(!posMap.get(i).equals("")) posMap_length++;
+	for(int i = 0; i < hrzMap.size(); i++){
+		if(!hrzMap.get(i).equals("")) hrzMap_length++;
 	}
 	
-    idk.main(posMap, list, dm, posMap_length);
+    idk.main(hrzMap, list, dm, hrzMap_length);
 	
 	//output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
     }
@@ -123,12 +124,12 @@ public static List<String> readFile(String fileName) {
 
 
 
-public static List<String> replacing(boolean dm, char[] letters, Integer key, List<String> part, boolean fp){
+public static List<String> replacing(boolean dm, char[] letters, Integer keyH, List<String> part, boolean fp){
 List<String> returned = new ArrayList<String>();
 if (fp){
 	for(int i = 0; i < part.size(); i++){
 			for(int x = 0; x < letters.length; x++){
-				if (part.get(i).equals(""+(x+1))){if(!posMap.containsKey(key))if(letters[x]==' '){bufferLetter+=(part.get(i));}
+				if (part.get(i).equals(""+(x+1))){if(!hrzMap.containsKey(keyH))if(letters[x]==' '){bufferLetter+=(part.get(i));}
 				                                                                     else{bufferLetter+=(Character.toString(letters[x]));} }
 
 			}
@@ -141,8 +142,8 @@ if (fp){
 		return returned;
 
 
-	//posMap.put(key, bufferList);
-//if(dm)	System.out.println(posMap.get(key));
+	//hrzMap.put(keyH, bufferList);
+//if(dm)	System.out.println(hrzMap.get(keyH));
 //	bufferList.clear();
 
 	}
@@ -154,101 +155,100 @@ return difault;
 
 public static void replacing_replacing(boolean dm, char[] letters){
 
-		field_part1 = replacing(dm, letters, key, field_part1, fp1);
-		posMap.put(key, field_part1);
-		key++;
+		field_part1 = replacing(dm, letters, keyH, field_part1, fp1);
+		hrzMap.put(keyH, field_part1);
+		keyH++;
 		
-		field_part2 = replacing(dm, letters, key, field_part2, fp2);
-		posMap.put(key, field_part2);
-		key++;
+		field_part2 = replacing(dm, letters, keyH, field_part2, fp2);
+		hrzMap.put(keyH, field_part2);
+		keyH++;
 		
-		field_part3 = replacing(dm, letters, key, field_part3, fp3);
-		posMap.put(key, field_part3);
-		key++;
+		field_part3 = replacing(dm, letters, keyH, field_part3, fp3);
+		hrzMap.put(keyH, field_part3);
+		keyH++;
 		
-		field_part4 = replacing(dm, letters, key, field_part4, fp4);
-		posMap.put(key, field_part4);
-		key++;
+		field_part4 = replacing(dm, letters, keyH, field_part4, fp4);
+		hrzMap.put(keyH, field_part4);
+		keyH++;
 		
-		field_part5 = replacing(dm, letters, key, field_part5, fp5);
-		posMap.put(key, field_part5);
-		key++;
+		field_part5 = replacing(dm, letters, keyH, field_part5, fp5);
+		hrzMap.put(keyH, field_part5);
+		keyH++;
 		
-		field_part6 = replacing(dm, letters, key, field_part6, fp6);
-		posMap.put(key, field_part6);
-		key++;
+		field_part6 = replacing(dm, letters, keyH, field_part6, fp6);
+		hrzMap.put(keyH, field_part6);
+		keyH++;
 		
-		field_part7 = replacing(dm, letters, key, field_part7, fp7);
-		posMap.put(key, field_part7);
-		key++;
+		field_part7 = replacing(dm, letters, keyH, field_part7, fp7);
+		hrzMap.put(keyH, field_part7);
+		keyH++;
 		
-		field_part8 = replacing(dm, letters, key, field_part8, fp8);
-		posMap.put(key, field_part8);
-		key++;
+		field_part8 = replacing(dm, letters, keyH, field_part8, fp8);
+		hrzMap.put(keyH, field_part8);
+		keyH++;
 		
-		field_part9 = replacing(dm, letters, key, field_part9, fp9);
-		posMap.put(key, field_part9);
-		key++;
+		field_part9 = replacing(dm, letters, keyH, field_part9, fp9);
+		hrzMap.put(keyH, field_part9);
+		keyH++;
 		
-		field_part10 = replacing(dm, letters, key, field_part10, fp10);
-		posMap.put(key, field_part10);
-		key++;
+		field_part10 = replacing(dm, letters, keyH, field_part10, fp10);
+		hrzMap.put(keyH, field_part10);
+		keyH++;
 		
-		field_part11 = replacing(dm, letters, key, field_part11, fp11);
-		posMap.put(key, field_part11);
-		key++;
+		field_part11 = replacing(dm, letters, keyH, field_part11, fp11);
+		hrzMap.put(keyH, field_part11);
+		keyH++;
 		
-		field_part12 = replacing(dm, letters, key, field_part12, fp12);
-		posMap.put(key, field_part12);
-		key++;
+		field_part12 = replacing(dm, letters, keyH, field_part12, fp12);
+		hrzMap.put(keyH, field_part12);
+		keyH++;
 		
-		field_part13 = replacing(dm, letters, key, field_part13, fp13);
-		posMap.put(key, field_part13);
-		key++;
+		field_part13 = replacing(dm, letters, keyH, field_part13, fp13);
+		hrzMap.put(keyH, field_part13);
+		keyH++;
 		
-		field_part14 = replacing(dm, letters, key, field_part14, fp14);
-		posMap.put(key, field_part14);
-		key++;
+		field_part14 = replacing(dm, letters, keyH, field_part14, fp14);
+		hrzMap.put(keyH, field_part14);
+		keyH++;
 		
-		field_part15 = replacing(dm, letters, key, field_part15, fp15);
-		posMap.put(key, field_part15);
-		key++;
+		field_part15 = replacing(dm, letters, keyH, field_part15, fp15);
+		hrzMap.put(keyH, field_part15);
+		keyH++;
 		
-		field_part16 = replacing(dm, letters, key, field_part16, fp16);
-		posMap.put(key, field_part16);
-		key++;
+		field_part16 = replacing(dm, letters, keyH, field_part16, fp16);
+		hrzMap.put(keyH, field_part16);
+		keyH++;
 		
-		field_part17 = replacing(dm, letters, key, field_part17, fp17);
-		posMap.put(key, field_part17);
-		key++;
+		field_part17 = replacing(dm, letters, keyH, field_part17, fp17);
+		hrzMap.put(keyH, field_part17);
+		keyH++;
 		
-		field_part18 = replacing(dm, letters, key, field_part18, fp18);
-		posMap.put(key, field_part18);
-		key++;
+		field_part18 = replacing(dm, letters, keyH, field_part18, fp18);
+		hrzMap.put(keyH, field_part18);
+		keyH++;
 
-		field_part19 = replacing(dm, letters, key, field_part19, fp19);
-		posMap.put(key, field_part19);
-		key++;
+		field_part19 = replacing(dm, letters, keyH, field_part19, fp19);
+		hrzMap.put(keyH, field_part19);
+		keyH++;
 		
-		field_part20 = replacing(dm, letters, key, field_part20, fp20);
-		posMap.put(key, field_part20);
-		key++;
+		field_part20 = replacing(dm, letters, keyH, field_part20, fp20);
+		hrzMap.put(keyH, field_part20);
+		keyH++;
 		
-		field_part21 = replacing(dm, letters, key, field_part21, fp21);
-		posMap.put(key, field_part21);
-		key++;
+		field_part21 = replacing(dm, letters, keyH, field_part21, fp21);
+		hrzMap.put(keyH, field_part21);
+		keyH++;
 		
-		field_part22 = replacing(dm, letters, key, field_part22, fp22);
-		posMap.put(key, field_part22);
-		key++;
+		field_part22 = replacing(dm, letters, keyH, field_part22, fp22);
+		hrzMap.put(keyH, field_part22);
+		keyH++;
 		
-		System.out.println(posMap);
+		System.out.println(hrzMap);
 	}
 
 
-public static List<String> toVertical(){
+public static List<String> toVertical(int waldquell){
 	List<String> vertical = new ArrayList<String>();
-	for(int waldquell = 0; waldquell < field_part1.size(); waldquell++){
 	if(!fp1) System.out.println("Iwas is da kaputt");
 	if(!fp2) System.out.println("Iwas is da kaputt");
 	if(!fp3) System.out.println("Iwas is da kaputt");
@@ -258,22 +258,54 @@ public static List<String> toVertical(){
 	if(!fp7) System.out.println("Iwas is da kaputt");
 	if(!fp8) System.out.println("Iwas is da kaputt");
 	if(!fp9) System.out.println("Iwas is da kaputt");
-	if(!fp10) for(int i = 0; i < 7; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp11) for(int i = 0; i < 8; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp12) for(int i = 0; i < 9; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp13) for(int i = 0; i < 10; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp14) for(int i = 0; i < 11; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp15) for(int i = 0; i < 12; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp16) for(int i = 0; i < 13; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp17) for(int i = 0; i < 14; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp18) for(int i = 0; i < 15; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp19) for(int i = 0; i < 16; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp20) for(int i = 0; i < 17; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp21) for(int i = 0; i < 18; i++){vertical.add(posMap.get(i).get(waldquell));}
-	if(!fp22) for(int i = 0; i < 19; i++){vertical.add(posMap.get(i).get(waldquell));}
-	}
+	if(!fp10){ for(int i = 0; i < 9; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp11){ for(int i = 0; i < 10; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp12){ for(int i = 0; i < 11; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp13){ for(int i = 0; i < 12; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp14){ for(int i = 0; i < 13; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp15){ for(int i = 0; i < 14; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp16){ for(int i = 0; i < 15; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp17){ for(int i = 0; i < 16; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp18){ for(int i = 0; i < 17; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp19){ for(int i = 0; i < 18; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp20){ for(int i = 0; i < 19; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp21){ for(int i = 0; i < 20; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
+	if(!fp22){ for(int i = 0; i < 21; i++){vertical.add(hrzMap.get(i).get(waldquell));}return vertical;}
 	return vertical;
 }
+
+public static void verticalice(boolean dm){
+	for(int i = 0; i < field_part1.size() ; i++){
+		switch(i){
+		case 1: vertical_part1 = toVertical(0); verMap.put(keyV, vertical_part1); keyV++;
+		case 2: vertical_part2 = toVertical(1); verMap.put(keyV, vertical_part2); keyV++;
+		case 3: vertical_part3 = toVertical(2); verMap.put(keyV, vertical_part3); keyV++;
+		case 4: vertical_part4 = toVertical(3); verMap.put(keyV, vertical_part4); keyV++;
+		case 5: vertical_part5 = toVertical(4); verMap.put(keyV, vertical_part5); keyV++;
+		case 6: vertical_part6 = toVertical(5); verMap.put(keyV, vertical_part6); keyV++;
+		case 7: vertical_part7 = toVertical(6); verMap.put(keyV, vertical_part7); keyV++;
+		case 8: vertical_part8 = toVertical(7); verMap.put(keyV, vertical_part8); keyV++;
+		case 9: vertical_part9 = toVertical(8); verMap.put(keyV, vertical_part9); keyV++;
+		case 10: vertical_part10 = toVertical(9); verMap.put(keyV, vertical_part10); keyV++;
+		case 11: vertical_part11 = toVertical(10); verMap.put(keyV, vertical_part11); keyV++;
+		case 12: vertical_part12 = toVertical(11); verMap.put(keyV, vertical_part12); keyV++;
+		case 13: vertical_part13 = toVertical(12); verMap.put(keyV, vertical_part13); keyV++;
+		case 14: vertical_part14 = toVertical(13); verMap.put(keyV, vertical_part14); keyV++;
+		case 15: vertical_part15 = toVertical(14); verMap.put(keyV, vertical_part15); keyV++;
+		case 16: vertical_part16 = toVertical(15); verMap.put(keyV, vertical_part16); keyV++;
+		case 17: vertical_part17 = toVertical(16); verMap.put(keyV, vertical_part17); keyV++;
+		case 18: vertical_part18 = toVertical(17); verMap.put(keyV, vertical_part18); keyV++;
+		case 19: vertical_part19 = toVertical(18); verMap.put(keyV, vertical_part19); keyV++;
+		case 20: vertical_part20 = toVertical(19); verMap.put(keyV, vertical_part20); keyV++;
+		case 21: vertical_part21 = toVertical(20); verMap.put(keyV, vertical_part21); keyV++;
+		case 22: vertical_part22 = toVertical(21); verMap.put(keyV, vertical_part22); keyV++;
+		}
+	}
+	System.out.println(verMap);
+	
+}
+
+
 
 
 }
