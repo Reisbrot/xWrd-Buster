@@ -276,30 +276,28 @@ public static List<String> toVertical(int waldquell){
 
 public static void verticalice(boolean dm){
 	for(int i = 0; i < field_part1.size() ; i++){
-		switch(i){
-		case 1: vertical_part1 = toVertical(0); verMap.put(keyV, vertical_part1); keyV++;
-		case 2: vertical_part2 = toVertical(1); verMap.put(keyV, vertical_part2); keyV++;
-		case 3: vertical_part3 = toVertical(2); verMap.put(keyV, vertical_part3); keyV++;
-		case 4: vertical_part4 = toVertical(3); verMap.put(keyV, vertical_part4); keyV++;
-		case 5: vertical_part5 = toVertical(4); verMap.put(keyV, vertical_part5); keyV++;
-		case 6: vertical_part6 = toVertical(5); verMap.put(keyV, vertical_part6); keyV++;
-		case 7: vertical_part7 = toVertical(6); verMap.put(keyV, vertical_part7); keyV++;
-		case 8: vertical_part8 = toVertical(7); verMap.put(keyV, vertical_part8); keyV++;
-		case 9: vertical_part9 = toVertical(8); verMap.put(keyV, vertical_part9); keyV++;
-		case 10: vertical_part10 = toVertical(9); verMap.put(keyV, vertical_part10); keyV++;
-		case 11: vertical_part11 = toVertical(10); verMap.put(keyV, vertical_part11); keyV++;
-		case 12: vertical_part12 = toVertical(11); verMap.put(keyV, vertical_part12); keyV++;
-		case 13: vertical_part13 = toVertical(12); verMap.put(keyV, vertical_part13); keyV++;
-		case 14: vertical_part14 = toVertical(13); verMap.put(keyV, vertical_part14); keyV++;
-		case 15: vertical_part15 = toVertical(14); verMap.put(keyV, vertical_part15); keyV++;
-		case 16: vertical_part16 = toVertical(15); verMap.put(keyV, vertical_part16); keyV++;
-		case 17: vertical_part17 = toVertical(16); verMap.put(keyV, vertical_part17); keyV++;
-		case 18: vertical_part18 = toVertical(17); verMap.put(keyV, vertical_part18); keyV++;
-		case 19: vertical_part19 = toVertical(18); verMap.put(keyV, vertical_part19); keyV++;
-		case 20: vertical_part20 = toVertical(19); verMap.put(keyV, vertical_part20); keyV++;
-		case 21: vertical_part21 = toVertical(20); verMap.put(keyV, vertical_part21); keyV++;
-		case 22: vertical_part22 = toVertical(21); verMap.put(keyV, vertical_part22); keyV++;
-		}
+		if(i == 1) {vertical_part1 = toVertical(0); verMap.put(keyV, vertical_part1); keyV++;}
+		if(i == 1) {vertical_part2 = toVertical(1); verMap.put(keyV, vertical_part2); keyV++;}
+		if(i == 2) {vertical_part3 = toVertical(2); verMap.put(keyV, vertical_part3); keyV++;}
+		if(i == 3) {vertical_part4 = toVertical(3); verMap.put(keyV, vertical_part4); keyV++;}
+		if(i == 4) {vertical_part5 = toVertical(4); verMap.put(keyV, vertical_part5); keyV++;}
+		if(i == 5) {vertical_part6 = toVertical(5); verMap.put(keyV, vertical_part6); keyV++;}
+		if(i == 6) {vertical_part7 = toVertical(6); verMap.put(keyV, vertical_part7); keyV++;}
+		if(i == 7) {vertical_part8 = toVertical(7); verMap.put(keyV, vertical_part8); keyV++;}
+		if(i == 8) {vertical_part9 = toVertical(8); verMap.put(keyV, vertical_part9); keyV++;}
+		if(i == 9) {vertical_part10 = toVertical(9); verMap.put(keyV, vertical_part10); keyV++;}
+		if(i == 10) {vertical_part11 = toVertical(10); verMap.put(keyV, vertical_part11); keyV++;}
+		if(i == 11) {vertical_part12 = toVertical(11); verMap.put(keyV, vertical_part12); keyV++;}
+		if(i == 12) {vertical_part13 = toVertical(12); verMap.put(keyV, vertical_part13); keyV++;}
+		if(i == 13) {vertical_part14 = toVertical(13); verMap.put(keyV, vertical_part14); keyV++;}
+		if(i == 14) {vertical_part15 = toVertical(14); verMap.put(keyV, vertical_part15); keyV++;}
+		if(i == 15) {vertical_part16 = toVertical(15); verMap.put(keyV, vertical_part16); keyV++;}
+		if(i == 16) {vertical_part17 = toVertical(16); verMap.put(keyV, vertical_part17); keyV++;}
+		if(i == 17) {vertical_part18 = toVertical(17); verMap.put(keyV, vertical_part18); keyV++;}
+		if(i == 18) {vertical_part19 = toVertical(18); verMap.put(keyV, vertical_part19); keyV++;}
+		if(i == 19) {vertical_part20 = toVertical(19); verMap.put(keyV, vertical_part20); keyV++;}
+		if(i == 20) {vertical_part21 = toVertical(20); verMap.put(keyV, vertical_part21); keyV++;}
+		if(i == 21) {vertical_part22 = toVertical(21); verMap.put(keyV, vertical_part22); keyV++;}
 	}
 	System.out.println(verMap);
 	
