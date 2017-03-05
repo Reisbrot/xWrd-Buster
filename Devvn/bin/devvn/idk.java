@@ -17,6 +17,7 @@ public class idk {
 	static int finalPos = 0;
 	static int wordlength = 0;
 	static int wordlength2 = 0;
+	static boolean moreThn2Wrds;
 	static List<Integer> wordpositions = new ArrayList<Integer>();
 	static List<Integer> seppositions = new ArrayList<Integer>();
 		public static void main(HashMap<Integer,List<String>> posMap, List<String> list, boolean dm, int size){
@@ -48,17 +49,22 @@ public class idk {
 						}
 					}
 				}
-				for(int wp = 0; wp < wordpositions.size(); wp++){
+				// ZEILE 18 und 8 HABEN JE DIE WORTLÄNGEN 0 UND 0!!!! ÜBEREINSTIMMUNG IN SEPARATORENSETZUNG!!! GRUND AUSFINDIG MACHEN!!!
+				if(wordpositions.size() >= 2) moreThn2Wrds = true;
+				for(int wp = 0; wp < wordpositions.size(); wp++){ //TODO >>ACHTUNG!<< !!!NOCH KEIN "ES GIBT NUR EIN WORT UND DAS ENDET AM ENDE DER ZEILE" FALL EINGEPLANT!!!
+					if(wp == (wordpositions.size() -1) && moreThn2Wrds)wordlength2 = length - wordpositions.get(wp) - 1;  //mehr als 2 Wörter in einer horizontalen Zeile werden nicht unterstützt!!!! :c 
 					for(int sp = 0; sp < seppositions.size(); sp++){
 						if(wordpositions.get(wp) < seppositions.get(sp)){if(wordlength == 0){wordlength = seppositions.get(sp) - wordpositions.get(wp) - 1; break;} else{wordlength2 = seppositions.get(sp) - wordpositions.get(wp) - 1;}; break;}
 					}
 				}
 				System.out.println(wordlength + "  " + wordlength2 + " Wordlängdhs");
 				wordlength = 0;
+				wordlength2 = 0;
 				zeichen_folge = 0;
 				zeichen_gesamt = 0;
 				wordpositions.clear();
 				seppositions.clear();
+				moreThn2Wrds = false;
 			}
 			
 			
