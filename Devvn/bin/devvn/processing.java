@@ -23,6 +23,7 @@ static int number;
 static int[] numbers;
 static char[] cleaned_letters;
 static int hrzMap_length = 0;
+static int verMap_length = 0;
 static List<String> difault = new ArrayList<String>();
 
 
@@ -91,6 +92,9 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 	
 	for(int i = 0; i < hrzMap.size(); i++){
 		if(!hrzMap.get(i).equals("")) hrzMap_length++;
+	}
+	for(int i = 0; i < verMap.size(); i++){
+		if(!verMap.get(i).equals("")) verMap_length++;
 	}
 	
     idk.main(hrzMap, list, dm, hrzMap_length);
@@ -303,7 +307,13 @@ public static void verticalice(boolean dm){
 	
 }
 
+public static void horCalc(int wl1, int wl2, List<Integer>wordpositions, int zeile){
+	
+}
 
+public static void verCalc(){
+	
+}
 
 
 }
