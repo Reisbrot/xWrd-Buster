@@ -307,8 +307,19 @@ public static void verticalice(boolean dm){
 	
 }
 
-public static void horCalc(int wl1, int wl2, List<Integer>wordpositions, int zeile){
+public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm){
+	HashMap<Integer, String> Buffer = new HashMap<Integer, String>();
+	int chk = 0;
+	if(wl1==0&&wl2==0&&wl3==0)return;
 	
+	for(int i = 0; i < field_part.size(); i++){
+		if(field_part.get(i) != "")
+		if(Character.isAlphabetic(field_part.get(i).charAt(0))) Buffer.put(i, field_part.get(i));
+	}														   if(dm) System.out.println(Buffer);
+	
+	for(int buffer = 0; buffer < Buffer.size(); buffer++){
+		if(Buffer.containsKey(buffer));
+	}
 }
 
 public static void verCalc(){

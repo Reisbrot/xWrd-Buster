@@ -52,7 +52,8 @@ if(dm)								System.out.println(wordpositions + " Anfang der Wörter");
 						}
 					}
 				}
-				// ZEILE 18 und 8 HABEN JE DIE WORTLÄNGEN 0 UND 0!!!! ÜBEREINSTIMMUNG IN SEPARATORENSETZUNG!!! GRUND AUSFINDIG MACHEN!!!
+				// ZEILE 18 und 8 UND 15 HABEN JE DIE WORTLÄNGEN 0 UND 0!!!! ÜBEREINSTIMMUNG IN SEPARATORENSETZUNG!!! GRUND !AUSFINDIG GEMACHT!!! 3BUCHSTABEN AM ANFANG GEBEN EINEN ERROR!!! 4 GEHT ABER AUCH!!!
+				
 				if(wordpositions.size() > 2) moreThn2Wrds = true;
 				if(wordpositions.size() == 2) rlyExct2Wrds = true;
 				for(int wp = 0; wp < wordpositions.size(); wp++){ //TODO >>ACHTUNG!<< !!!NOCH KEIN "ES GIBT NUR EIN WORT UND DAS ENDET AM ENDE DER ZEILE" FALL EINGEPLANT!!!
@@ -63,7 +64,7 @@ if(dm)								System.out.println(wordpositions + " Anfang der Wörter");
 					}
 				}
 if(dm)			System.out.println(wordlength + "  " + wordlength2 + "  " + wordlength3 + " Wordlängdhs");			
-				processing.horCalc(wordlength, wordlength2, wordpositions, zeile);
+				processing.horCalc(wordlength, wordlength2, wordlength3, wordpositions, zeile, posMap.get(zeile), dm);
 				
 				wordlength = 0;
 				wordlength2 = 0;
@@ -73,6 +74,7 @@ if(dm)			System.out.println(wordlength + "  " + wordlength2 + "  " + wordlength3
 				wordpositions.clear();
 				seppositions.clear();
 				moreThn2Wrds = false;
+				rlyExct2Wrds = false;
 			}
 			
 			
