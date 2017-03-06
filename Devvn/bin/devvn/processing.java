@@ -318,7 +318,18 @@ public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions
 	}														   if(dm) System.out.println(Buffer);
 	
 	for(int buffer = 0; buffer < Buffer.size(); buffer++){
-		if(Buffer.containsKey(buffer));
+		if(Buffer.containsKey(buffer)){
+			int distance = Math.abs(wordpositions.get(0) - buffer);
+			int idx = 0;
+			for(int c = 1; c < wordpositions.size(); c++){
+			    int cdistance = Math.abs(wordpositions.get(c) - buffer);
+			    if(cdistance < distance){
+			        idx = c;
+			        distance = cdistance;
+			    }
+			}System.out.println(idx + " PEEEEEEEEENNNNNNIIIIIIIIIIIIIIIIIS");
+		}
+		
 	}
 }
 
