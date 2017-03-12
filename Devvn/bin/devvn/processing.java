@@ -25,6 +25,7 @@ static char[] cleaned_letters;
 static int hrzMap_length = 0;
 static int verMap_length = 0;
 static List<String> difault = new ArrayList<String>();
+static boolean mi1;
 
 
 @SuppressWarnings("all")
@@ -307,6 +308,7 @@ public static void verticalice(boolean dm){
 	
 }
 
+@SuppressWarnings("all")
 public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm){
 	HashMap<Integer, String> Buffer = new HashMap<Integer, String>();
 	int chk = 0;
@@ -317,17 +319,19 @@ public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions
 		if(Character.isAlphabetic(field_part.get(i).charAt(0))) Buffer.put(i, field_part.get(i));
 	}														   if(dm) System.out.println(Buffer);
 	
-	for(int buffer = 0; buffer < Buffer.size(); buffer++){
+	for(int buffer = 0; buffer < field_part.size(); buffer++){
 		if(Buffer.containsKey(buffer)){
-			int distance = Math.abs(wordpositions.get(0) - buffer);
-			int idx = 0;
-			for(int c = 1; c < wordpositions.size(); c++){
-			    int cdistance = Math.abs(wordpositions.get(c) - buffer);
-			    if(cdistance < distance){
-			        idx = c;
-			        distance = cdistance;
-			    }
-			}System.out.println(idx + " PEEEEEEEEENNNNNNIIIIIIIIIIIIIIIIIS");
+			 for(int i = 0; i < wordpositions.size(); i++){
+				 if(wordpositions.get(i) <  buffer){
+					 if(wordpositions.get(i) == -1) {mi1 = true; 
+					 	 int relativeToWordBeginning = buffer;}
+					 else{
+						 int relativeToWordBeginning = Math.abs(wordpositions.get(i) - buffer);
+					 	 }
+					 
+					 
+				 }
+			 }
 		}
 		
 	}
