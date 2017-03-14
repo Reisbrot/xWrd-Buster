@@ -26,6 +26,8 @@ static int hrzMap_length = 0;
 static int verMap_length = 0;
 static List<String> difault = new ArrayList<String>();
 static boolean mi1;
+static int relativeToWordBeginning;
+static int maxPos;
 
 
 @SuppressWarnings("all")
@@ -311,30 +313,35 @@ public static void verticalice(boolean dm){
 @SuppressWarnings("all")
 public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm){
 	HashMap<Integer, String> Buffer = new HashMap<Integer, String>();
-	int chk = 0;
+	int wl = 0;
 	if(wl1==0&&wl2==0&&wl3==0)return;
 	
 	for(int i = 0; i < field_part.size(); i++){
 		if(field_part.get(i) != "")
 		if(Character.isAlphabetic(field_part.get(i).charAt(0))) Buffer.put(i, field_part.get(i));
 	}														   if(dm) System.out.println(Buffer);
-	
+
+
 	for(int buffer = 0; buffer < field_part.size(); buffer++){
 		if(Buffer.containsKey(buffer)){
 			 for(int i = 0; i < wordpositions.size(); i++){
-				 if(wordpositions.get(i) <  buffer){
-					 if(wordpositions.get(i) == -1) {mi1 = true; 
-					 	 int relativeToWordBeginning = buffer;}
+				 wl++;
+				 if(wl == 1)maxPos = wordpositions.get(i) + wl1;
+				 if(wl == 2)maxPos = wordpositions.get(i) + wl2;
+				 if(wl == 3)maxPos = wordpositions.get(i) + wl3;
+				 if(wordpositions.get(i) <  buffer && buffer <= maxPos){
+					 if(wordpositions.get(i) == -1) {mi1 = true;
+					 	 relativeToWordBeginning = buffer + 1;}
 					 else{
-						 int relativeToWordBeginning = Math.abs(wordpositions.get(i) - buffer);
+						 relativeToWordBeginning = Math.abs(wordpositions.get(i) - buffer);
 					 	 }
-					 
+if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1));
 					 
 				 }
+			 }wl = 0;
 			 }
 		}
 		
-	}
 }
 
 public static void verCalc(){
