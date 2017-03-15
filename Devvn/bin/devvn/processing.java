@@ -28,6 +28,8 @@ static List<String> difault = new ArrayList<String>();
 static boolean mi1;
 static int relativeToWordBeginning;
 static int maxPos;
+static boolean yes;
+static List<Character> wordBuilder = new ArrayList<Character>();
 
 
 @SuppressWarnings("all")
@@ -313,6 +315,7 @@ public static void verticalice(boolean dm){
 @SuppressWarnings("all")
 public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm){
 	HashMap<Integer, String> Buffer = new HashMap<Integer, String>();
+
 	int wl = 0;
 	if(wl1==0&&wl2==0&&wl3==0)return;
 	
@@ -330,13 +333,18 @@ public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions
 				 if(wl == 2)maxPos = wordpositions.get(i) + wl2;
 				 if(wl == 3)maxPos = wordpositions.get(i) + wl3;
 				 if(wordpositions.get(i) <  buffer && buffer <= maxPos){
+					 yes = true;
 					 if(wordpositions.get(i) == -1) {mi1 = true;
 					 	 relativeToWordBeginning = buffer + 1;}
 					 else{
 						 relativeToWordBeginning = Math.abs(wordpositions.get(i) - buffer);
 					 	 }
-if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1));
-					 
+if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " ist ein -> " + field_part.get(buffer));
+				 }
+				 switch(wl){
+				 case 1: 
+				 case 2:
+				 case 3:
 				 }
 			 }wl = 0;
 			 }
@@ -347,6 +355,9 @@ if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1));
 public static void verCalc(){
 	
 }
+
+
+
 
 
 }
