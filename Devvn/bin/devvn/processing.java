@@ -29,7 +29,10 @@ static boolean mi1;
 static int relativeToWordBeginning;
 static int maxPos;
 static boolean yes;
-static List<Character> wordBuilder = new ArrayList<Character>();
+static List<Character> wordBuilder1 = new ArrayList<Character>();
+static List<Character> wordBuilder2 = new ArrayList<Character>();
+static List<Character> wordBuilder3 = new ArrayList<Character>();
+static boolean neu = true;
 
 
 @SuppressWarnings("all")
@@ -342,10 +345,12 @@ public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions
 if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " ist ein -> " + field_part.get(buffer));
 				 }
 				 switch(wl){
-				 case 1: 
+				 case 1: if(neu) {for(int a = 0; a < wl1; a++)wordBuilder1.add('#'); neu = false;}
+				 wordBuilder1.set(relativeToWordBeginning - 1, field_part.get(buffer).charAt(0));
 				 case 2:
 				 case 3:
 				 }
+				 System.out.println(wordBuilder1);
 			 }wl = 0;
 			 }
 		}
