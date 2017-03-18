@@ -35,6 +35,7 @@ static List<Character> wordBuilder3 = new ArrayList<Character>();
 static boolean neu1 = true;
 static boolean neu2 = true;
 static boolean neu3 = true;
+static boolean ThatsTheWord;
 
 @SuppressWarnings("all")
 static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list, boolean dm) {
@@ -384,9 +385,16 @@ static void verCalc(){
 	
 }
 
+@SuppressWarnings("all")
 static void compareToDict(List<Character> word, List<String> list){
 	for(int i = 0; i < list.size(); i++){
-		
+		ThatsTheWord = true;
+		if(!(list.get(i).length() == word.size())) ThatsTheWord = false;
+		for(int c = 0; c < word.size(); c++){
+			if(word.get(c).equals('#'));
+			else{if(!(word.get(c) == (list.get(i).charAt(c)))) ThatsTheWord = false;}
+		}
+		if(ThatsTheWord) System.out.println("Das Wort kann ein " + list.get(i) + " sein.");
 	}
 }
 
