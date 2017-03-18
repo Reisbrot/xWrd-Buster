@@ -32,8 +32,9 @@ static boolean yes;
 static List<Character> wordBuilder1 = new ArrayList<Character>();
 static List<Character> wordBuilder2 = new ArrayList<Character>();
 static List<Character> wordBuilder3 = new ArrayList<Character>();
-static boolean neu = true;
-
+static boolean neu1 = true;
+static boolean neu2 = true;
+static boolean neu3 = true;
 
 @SuppressWarnings("all")
 static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list, boolean dm) {
@@ -136,7 +137,7 @@ public static List<String> readFile(String fileName) {
 
 
 
-public static List<String> replacing(boolean dm, char[] letters, Integer keyH, List<String> part, boolean fp){
+static List<String> replacing(boolean dm, char[] letters, Integer keyH, List<String> part, boolean fp){
 List<String> returned = new ArrayList<String>();
 if (fp){
 	for(int i = 0; i < part.size(); i++){
@@ -165,7 +166,7 @@ return difault;
 
 
 
-public static void replacing_replacing(boolean dm, char[] letters){
+static void replacing_replacing(boolean dm, char[] letters){
 
 		field_part1 = replacing(dm, letters, keyH, field_part1, fp1);
 		hrzMap.put(keyH, field_part1);
@@ -259,7 +260,7 @@ public static void replacing_replacing(boolean dm, char[] letters){
 	}
 
 
-public static List<String> toVertical(int waldquell){
+static List<String> toVertical(int waldquell){
 	List<String> vertical = new ArrayList<String>();
 	if(!fp1) System.out.println("Iwas is da kaputt");
 	if(!fp2) System.out.println("Iwas is da kaputt");
@@ -286,7 +287,7 @@ public static List<String> toVertical(int waldquell){
 	return vertical;
 }
 
-public static void verticalice(boolean dm){
+static void verticalice(boolean dm){
 	for(int i = 0; i < field_part1.size() ; i++){
 		if(i == 1) {vertical_part1 = toVertical(0); verMap.put(keyV, vertical_part1); keyV++;}
 		if(i == 1) {vertical_part2 = toVertical(1); verMap.put(keyV, vertical_part2); keyV++;}
@@ -316,7 +317,7 @@ public static void verticalice(boolean dm){
 }
 
 @SuppressWarnings("all")
-public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm){
+static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm, List<String> list){
 	HashMap<Integer, String> Buffer = new HashMap<Integer, String>();
 
 	int wl = 0;
@@ -343,25 +344,51 @@ public static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions
 						 relativeToWordBeginning = Math.abs(wordpositions.get(i) - buffer);
 					 	 }
 if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " ist ein -> " + field_part.get(buffer));
-				 }
 				 switch(wl){
-				 case 1: if(neu) {for(int a = 0; a < wl1; a++)wordBuilder1.add('#'); neu = false;}
-				 wordBuilder1.set(relativeToWordBeginning - 1, field_part.get(buffer).charAt(0));
-				 case 2:
-				 case 3:
+				 case 1: 
+					 	for(int wb = 0; wb < wordBuilder1.size(); wb++){
+					 		if (!wordBuilder1.get(wb).equals('#')) neu1 = false;
+					 	}
+					 if(neu1) for(int a = 0; a < wl1; a++)wordBuilder1.add('#');
+					 wordBuilder1.set(relativeToWordBeginning - 1, field_part.get(buffer).charAt(0));
+					 break;
+					 
+				 case 2: 
+					 	for(int wb = 0; wb < wordBuilder2.size(); wb++){
+					 		if (!wordBuilder2.get(wb).equals('#')) neu2 = false;
+					 	}
+					 if(neu2) for(int a = 0; a < wl1; a++)wordBuilder2.add('#');
+					 wordBuilder2.set(relativeToWordBeginning - 1, field_part.get(buffer).charAt(0));
+					 break;
+					 
+				 case 3: 
+					 	for(int wb = 0; wb < wordBuilder3.size(); wb++){
+					 		if (!wordBuilder3.get(wb).equals('#')) neu3 = false;
+					 	}
+					 if(neu3) for(int a = 0; a < wl1; a++)wordBuilder3.add('#');
+					 wordBuilder3.set(relativeToWordBeginning - 1, field_part.get(buffer).charAt(0));
+					 break;
+				 default: System.out.println("möh " + wl);
 				 }
-				 System.out.println(wordBuilder1);
-			 }wl = 0;
-			 }
+				 }
+				 System.out.println(wordBuilder1 + " " + wordBuilder2 + " " + wordBuilder3); 
+			 }wl = 0; neu1 = true; neu2 = true; neu3 = true;
+			 } 
 		}
+		compareToDict(wordBuilder1, list);
+	    wordBuilder1.clear(); wordBuilder2.clear(); wordBuilder3.clear();
 		
 }
 
-public static void verCalc(){
+static void verCalc(){
 	
 }
 
-
+static void compareToDict(List<Character> word, List<String> list){
+	for(int i = 0; i < list.size(); i++){
+		
+	}
+}
 
 
 

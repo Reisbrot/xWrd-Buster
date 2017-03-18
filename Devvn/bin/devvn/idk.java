@@ -64,7 +64,7 @@ if(dm)								System.out.println(wordpositions + " Anfang der Wörter");
 					}
 				}
 if(dm)			System.out.println(wordlength + "  " + wordlength2 + "  " + wordlength3 + " Wordlängdhs");			
-				processing.horCalc(wordlength, wordlength2, wordlength3, wordpositions, zeile, posMap.get(zeile), dm);
+				processing.horCalc(wordlength, wordlength2, wordlength3, wordpositions, zeile, posMap.get(zeile), dm, list);
 				
 				wordlength = 0;
 				wordlength2 = 0;
