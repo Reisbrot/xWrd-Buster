@@ -376,7 +376,8 @@ if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " 
 			 }wl = 0; neu1 = true; neu2 = true; neu3 = true;
 			 } 
 		}
-		compareToDict(wordBuilder1, list);
+		String word = wordBuilder1.toString();
+		compareToDict(word, list);
 	    wordBuilder1.clear(); wordBuilder2.clear(); wordBuilder3.clear();
 		
 }
@@ -386,13 +387,13 @@ static void verCalc(){
 }
 
 @SuppressWarnings("all")
-static void compareToDict(List<Character> word, List<String> list){
+static void compareToDict(String word, List<String> list){
 	for(int i = 0; i < list.size(); i++){
 		ThatsTheWord = true;
-		if(!(list.get(i).length() == word.size())) ThatsTheWord = false;
-		for(int c = 0; c < word.size(); c++){
-			if(word.get(c).equals('#'));
-			else{if(!(word.get(c) == (list.get(i).charAt(c)))) ThatsTheWord = false;}
+		if(!(list.get(i).length() == word.length())) ThatsTheWord = false;
+		for(int c = 0; c < word.length(); c++){
+			if(word.charAt(c) == ('#'));
+			else{if(!(word.charAt(c) == (list.get(i).charAt(c)))) ThatsTheWord = false;}
 		}
 		if(ThatsTheWord) System.out.println("Das Wort kann ein " + list.get(i) + " sein.");
 	}
