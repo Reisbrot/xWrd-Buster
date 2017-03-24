@@ -47,29 +47,8 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 	cleaned_letters = new char[known.size()];
 	
 	
-	for(int i = 0; i < known.size(); i++){
-		int x=0;
-		while(true){
-		 Character character = known.get(i).charAt(x);
-	        if (Character.isDigit(character))
-	            number_docking += character;
-	        
-			if (x < known.get(i).length()-1){x++;}else{number = Integer.parseInt(number_docking); numbers[i] = number;  number_docking=""; break;}
-			}
-		
-		Character character = known.get(i).charAt(0);
-		letter_docking += character;
-	}
-	cleaned_letters = letter_docking.toCharArray();
-	
-	
-	for(int i = 0; i < known.size(); i++){
-		letters[numbers[i]-1] = cleaned_letters[i]; 
-	}
-
-if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
-
-
+   addKnownChars(known, letters, dm);
+   
 	for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
 			
 		    //Wieso ich kein Switch benutzt habe? Gab nen Error, das ist alles.
@@ -398,15 +377,35 @@ static void compareToDict(List<Character> word, List<String> list){
 		}
 		if(ThatsTheWord) {System.out.println("Das Wort kann ein " + list.get(i) + " sein."); possibleWords++;}
 	}
-	if(possibleWords == 1) //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
+	if(possibleWords == 1); prepareNewChars(list.get()); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
+}
+
+static void addKnownChars(ArrayList<String> known, char[] letters, boolean dm){
+	for(int i = 0; i < known.size(); i++){
+		int x=0;
+		while(true){
+		 Character character = known.get(i).charAt(x);
+	        if (Character.isDigit(character))
+	            number_docking += character;
+	        
+			if (x < known.get(i).length()-1){x++;}else{number = Integer.parseInt(number_docking); numbers[i] = number;  number_docking=""; break;}
+			}
+		
+		Character character = known.get(i).charAt(0);
+		letter_docking += character;
+	}
+	cleaned_letters = letter_docking.toCharArray();
+	
+	
+	for(int i = 0; i < known.size(); i++){
+		letters[numbers[i]-1] = cleaned_letters[i]; 
+	}
+
+if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
 }
 
 
-
+static void prepareNewChars(){
 }
 
-
-
-
-
-
+}
