@@ -22,8 +22,6 @@ static String letter_docking = "";
 static int number;
 static int[] numbers;
 static char[] cleaned_letters;
-static int hrzMap_length = 0;
-static int verMap_length = 0;
 static List<String> difault = new ArrayList<String>();
 static boolean mi1;
 static int relativeToWordBeginning;
@@ -50,23 +48,15 @@ if(!init) {Arrays.fill(letters, 0, letters.length, ' ');
 	
 		  numbers = new int[known.size()];
 		  cleaned_letters = new char[known.size()];
-		  addKnownChars(known, dm);
+		  addKnownChars(known, dm, list);
    
 		  field_init(field, l);}
     
 	replacing_replacing(dm);
 	verticalice(dm);
-	
-if(!init){
-	for(int i = 0; i < hrzMap.size(); i++){
-		if(!hrzMap.get(i).equals("")) hrzMap_length++;
-	}
-	for(int i = 0; i < verMap.size(); i++){
-		if(!verMap.get(i).equals("")) verMap_length++;
-	}
-}
-    idk.main(hrzMap, list, dm, hrzMap_length);
 	init = true;
+    idk.main(hrzMap, list, dm, 19);
+
 	//output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
     }
 
@@ -359,10 +349,11 @@ static void compareToDict(List<Character> word, List<String> list, int PASSwl, i
 		if(ThatsTheWord) {System.out.println("Das Wort kann ein " + list.get(c2d) + " sein."); PASSc2d = c2d; possibleWords++;}
 	}
 	if(possibleWords == 0)System.err.println("Es scheint kein Wort zu passen. Abtippfehler oder ein 'Word of Doom'.");
-	if(possibleWords == 1)prepareNewChars(list.get(PASSc2d), PASSwl, PASSwp, PASSfield_part, dm); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
+	if(possibleWords == 1)prepareNewChars(list.get(PASSc2d), PASSwl, PASSwp, PASSfield_part, dm, list); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
 }
 
-static void addKnownChars(List<String> known, boolean dm){
+static void addKnownChars(List<String> known, boolean dm, List<String>list){
+	System.err.println("SAD AJSFDO JAEIFO JADNIF HNAEDG( HBEDAGNEIOUGHJSIEURGHSERNGSDKLJGNSIOEUGHJUSIEHGIUSEGHISUEOGHSOIEUGH ISRGHISURHGSDIFGH SDJGN SKJDG NKSDJ NLDEEUTTSCHLAND");
 	for(int i = 0; i < known.size(); i++){
 	  int x=0;
 	  while(true){
@@ -383,14 +374,19 @@ static void addKnownChars(List<String> known, boolean dm){
 	}
 
 if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
+if(init){ 	
+	        replacing_replacing(dm);
+            verticalice(dm);
+            idk.main(hrzMap, list, dm, 19); //TODO ersetz 19 durch anzahl von Zeilen - oben auch
+		}
 }
 
 
-static void prepareNewChars(String BasicWord, int wl, int wp, List<String> field_part, boolean dm){
+static void prepareNewChars(String BasicWord, int wl, int wp, List<String> field_part, boolean dm, List<String> list){
 if(dm)	System.out.println(new StringBuffer().append("Wort: ").append(BasicWord).append(" - WL: ").append(wl).append(" - WP: ").append(wp).append(" - field_part: ").append(field_part));
 	BasicWord = BasicWord.toLowerCase();
 	List<String> chars = new ArrayList<String>();
-	//Alles bis hier sind nur Deklarationen
+	//Alles bis hier sind nur Deklarationen                        //TODO FIELD PART IST FALSCH WENNS NEU DURCHLÄUFT SPASSTIII MOST IMPORTANT
 	for(int i = 0; i < BasicWord.length(); i++){
 		chars.add(BasicWord.charAt(i) + field_part.get(wp + i + 1));
 	}
@@ -404,7 +400,7 @@ if(dm)	System.out.println(chars);
 	numbers = new int[chars.size()];
 	cleaned_letters = new char[chars.size()]; 
 	letter_docking = "";
-	addKnownChars(chars, dm);
+	addKnownChars(chars, dm, list);
 	}
 }
 
