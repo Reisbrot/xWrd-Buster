@@ -39,17 +39,17 @@ static boolean ThatsTheWord;
 static int possibleWords;
 static int c2d;
 static int PASSc2d;
+static char[] letters;
 
 @SuppressWarnings("all")
-static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list, boolean dm) {
+static void verarbeitung(List<String> field, ArrayList<String> known, int letterl, int l, List<String> list, boolean dm) {
+	letters = new char[letterl];
 	
 	Arrays.fill(letters, 0, letters.length, ' ');
 	
 	numbers = new int[known.size()];
 	cleaned_letters = new char[known.size()];
-	
-	
-   addKnownChars(known, letters, dm);
+    addKnownChars(known, dm);
    
 	for(int i=0; i < field.size()/l; i++){  //Die Schleife wird so oft durchlaufen wie´s Zeilen gibt
 			
@@ -79,7 +79,7 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
             if (i >= 22){System.err.println("Index out of range - Rätsel zu lang, maximal 22 Zeilen!");}
 			
 	}
-	replacing_replacing(dm, letters);
+	replacing_replacing(dm);
 	verticalice(dm);
 	
 	for(int i = 0; i < hrzMap.size(); i++){
@@ -89,7 +89,7 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 		if(!verMap.get(i).equals("")) verMap_length++;
 	}
 	
-    idk.main(hrzMap, list, dm, hrzMap_length, letters);
+    idk.main(hrzMap, list, dm, hrzMap_length);
 	
 	//output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
     }
@@ -120,7 +120,7 @@ public static List<String> readFile(String fileName) {
 
 
 
-static List<String> replacing(boolean dm, char[] letters, Integer keyH, List<String> part, boolean fp){
+static List<String> replacing(boolean dm, Integer keyH, List<String> part, boolean fp){
 List<String> returned = new ArrayList<String>();
 if (fp){
 	for(int i = 0; i < part.size(); i++){
@@ -149,93 +149,93 @@ return difault;
 
 
 
-static void replacing_replacing(boolean dm, char[] letters){
+static void replacing_replacing(boolean dm){
 
-		field_part1 = replacing(dm, letters, keyH, field_part1, fp1);
+		field_part1 = replacing(dm, keyH, field_part1, fp1);
 		hrzMap.put(keyH, field_part1);
 		keyH++;
 		
-		field_part2 = replacing(dm, letters, keyH, field_part2, fp2);
+		field_part2 = replacing(dm, keyH, field_part2, fp2);
 		hrzMap.put(keyH, field_part2);
 		keyH++;
 		
-		field_part3 = replacing(dm, letters, keyH, field_part3, fp3);
+		field_part3 = replacing(dm, keyH, field_part3, fp3);
 		hrzMap.put(keyH, field_part3);
 		keyH++;
 		
-		field_part4 = replacing(dm, letters, keyH, field_part4, fp4);
+		field_part4 = replacing(dm, keyH, field_part4, fp4);
 		hrzMap.put(keyH, field_part4);
 		keyH++;
 		
-		field_part5 = replacing(dm, letters, keyH, field_part5, fp5);
+		field_part5 = replacing(dm, keyH, field_part5, fp5);
 		hrzMap.put(keyH, field_part5);
 		keyH++;
 		
-		field_part6 = replacing(dm, letters, keyH, field_part6, fp6);
+		field_part6 = replacing(dm, keyH, field_part6, fp6);
 		hrzMap.put(keyH, field_part6);
 		keyH++;
 		
-		field_part7 = replacing(dm, letters, keyH, field_part7, fp7);
+		field_part7 = replacing(dm, keyH, field_part7, fp7);
 		hrzMap.put(keyH, field_part7);
 		keyH++;
 		
-		field_part8 = replacing(dm, letters, keyH, field_part8, fp8);
+		field_part8 = replacing(dm, keyH, field_part8, fp8);
 		hrzMap.put(keyH, field_part8);
 		keyH++;
 		
-		field_part9 = replacing(dm, letters, keyH, field_part9, fp9);
+		field_part9 = replacing(dm, keyH, field_part9, fp9);
 		hrzMap.put(keyH, field_part9);
 		keyH++;
 		
-		field_part10 = replacing(dm, letters, keyH, field_part10, fp10);
+		field_part10 = replacing(dm, keyH, field_part10, fp10);
 		hrzMap.put(keyH, field_part10);
 		keyH++;
 		
-		field_part11 = replacing(dm, letters, keyH, field_part11, fp11);
+		field_part11 = replacing(dm, keyH, field_part11, fp11);
 		hrzMap.put(keyH, field_part11);
 		keyH++;
 		
-		field_part12 = replacing(dm, letters, keyH, field_part12, fp12);
+		field_part12 = replacing(dm, keyH, field_part12, fp12);
 		hrzMap.put(keyH, field_part12);
 		keyH++;
 		
-		field_part13 = replacing(dm, letters, keyH, field_part13, fp13);
+		field_part13 = replacing(dm, keyH, field_part13, fp13);
 		hrzMap.put(keyH, field_part13);
 		keyH++;
 		
-		field_part14 = replacing(dm, letters, keyH, field_part14, fp14);
+		field_part14 = replacing(dm, keyH, field_part14, fp14);
 		hrzMap.put(keyH, field_part14);
 		keyH++;
 		
-		field_part15 = replacing(dm, letters, keyH, field_part15, fp15);
+		field_part15 = replacing(dm, keyH, field_part15, fp15);
 		hrzMap.put(keyH, field_part15);
 		keyH++;
 		
-		field_part16 = replacing(dm, letters, keyH, field_part16, fp16);
+		field_part16 = replacing(dm, keyH, field_part16, fp16);
 		hrzMap.put(keyH, field_part16);
 		keyH++;
 		
-		field_part17 = replacing(dm, letters, keyH, field_part17, fp17);
+		field_part17 = replacing(dm, keyH, field_part17, fp17);
 		hrzMap.put(keyH, field_part17);
 		keyH++;
 		
-		field_part18 = replacing(dm, letters, keyH, field_part18, fp18);
+		field_part18 = replacing(dm, keyH, field_part18, fp18);
 		hrzMap.put(keyH, field_part18);
 		keyH++;
 
-		field_part19 = replacing(dm, letters, keyH, field_part19, fp19);
+		field_part19 = replacing(dm, keyH, field_part19, fp19);
 		hrzMap.put(keyH, field_part19);
 		keyH++;
 		
-		field_part20 = replacing(dm, letters, keyH, field_part20, fp20);
+		field_part20 = replacing(dm, keyH, field_part20, fp20);
 		hrzMap.put(keyH, field_part20);
 		keyH++;
 		
-		field_part21 = replacing(dm, letters, keyH, field_part21, fp21);
+		field_part21 = replacing(dm, keyH, field_part21, fp21);
 		hrzMap.put(keyH, field_part21);
 		keyH++;
 		
-		field_part22 = replacing(dm, letters, keyH, field_part22, fp22);
+		field_part22 = replacing(dm, keyH, field_part22, fp22);
 		hrzMap.put(keyH, field_part22);
 		keyH++;
 		
@@ -300,7 +300,7 @@ static void verticalice(boolean dm){
 }
 
 @SuppressWarnings("all")
-static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm, List<String> list, char[] letters){
+static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm, List<String> list){
 	HashMap<Integer, String> Buffer = new HashMap<Integer, String>();
 
 	int wl = 0;
@@ -358,7 +358,7 @@ if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " 
 			 }wl = 0; neu1 = true; neu2 = true; neu3 = true;
 			 } 
 		}
-		compareToDict(wordBuilder1, list, wl1, wordpositions.get(0), field_part, dm, letters);
+		compareToDict(wordBuilder1, list, wl1, wordpositions.get(0), field_part, dm);
 		possibleWords = 0;
 	    wordBuilder1.clear(); wordBuilder2.clear(); wordBuilder3.clear();
 		
@@ -369,7 +369,7 @@ static void verCalc(){
 }
 
 @SuppressWarnings("all")
-static void compareToDict(List<Character> word, List<String> list, int PASSwl, int PASSwp, List<String> PASSfield_part, boolean dm, char[] PASSletters){
+static void compareToDict(List<Character> word, List<String> list, int PASSwl, int PASSwp, List<String> PASSfield_part, boolean dm){
 	for(c2d = 0; c2d < list.size(); c2d++){
 		ThatsTheWord = true;
 		if(!(list.get(c2d).length() == word.size())) ThatsTheWord = false;
@@ -381,35 +381,34 @@ static void compareToDict(List<Character> word, List<String> list, int PASSwl, i
 		if(ThatsTheWord) {System.out.println("Das Wort kann ein " + list.get(c2d) + " sein."); PASSc2d = c2d; possibleWords++;}
 	}
 	if(possibleWords == 0)System.err.println("Es scheint kein Wort zu passen. Abtippfehler oder ein 'Word of Doom'.");
-	if(possibleWords == 1)prepareNewChars(list.get(PASSc2d), PASSwl, PASSwp, PASSfield_part, dm, PASSletters); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
+	if(possibleWords == 1)prepareNewChars(list.get(PASSc2d), PASSwl, PASSwp, PASSfield_part, dm); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
 }
 
-static void addKnownChars(List<String> known, char[] letters, boolean dm){
+static void addKnownChars(List<String> known, boolean dm){
 	for(int i = 0; i < known.size(); i++){
-		int x=0;
-		while(true){
-		 Character character = known.get(i).charAt(x);
-	        if (Character.isDigit(character))
-	            number_docking += character;
-	        
-			if (x < known.get(i).length()-1){x++;}else{number = Integer.parseInt(number_docking); numbers[i] = number;  number_docking=""; break;}
-			}
-		
-		Character character = known.get(i).charAt(0);
-		letter_docking += character;
+	  int x=0;
+	  while(true){
+	    Character character = known.get(i).charAt(x);
+	      if (Character.isDigit(character))
+	        number_docking += character;
+	    if (x < known.get(i).length()-1){x++;}else{number = Integer.parseInt(number_docking); numbers[i] = number;  number_docking=""; break;}
+	  }
+	  Character character = known.get(i).charAt(0);
+	  letter_docking += character;
 	}
+	
 	cleaned_letters = letter_docking.toCharArray();
 	
 	
 	for(int i = 0; i < known.size(); i++){
-		letters[numbers[i]-1] = cleaned_letters[i]; 
+      letters[numbers[i]-1] = cleaned_letters[i]; 
 	}
 
 if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
 }
 
 
-static void prepareNewChars(String BasicWord, int wl, int wp, List<String> field_part, boolean dm, char[] letters){
+static void prepareNewChars(String BasicWord, int wl, int wp, List<String> field_part, boolean dm){
 if(dm)	System.out.println(new StringBuffer().append("Wort: ").append(BasicWord).append(" - WL: ").append(wl).append(" - WP: ").append(wp).append(" - field_part: ").append(field_part));
 	BasicWord = BasicWord.toLowerCase();
 	List<String> chars = new ArrayList<String>();
@@ -423,7 +422,12 @@ if(dm)	System.out.println(chars);
 	}
 if(dm)	System.out.println(chars);
 	if(chars.isEmpty()) System.out.println("HÖ ICH DENKE MAL DU HAST SCHON VIELE BUCHSTABEN NH");
-	else addKnownChars(chars, letters, dm);
+	else{	
+	numbers = new int[chars.size()];
+	cleaned_letters = new char[chars.size()]; 
+	letter_docking = "";
+	addKnownChars(chars, dm);
+	}
 }
 
 }
