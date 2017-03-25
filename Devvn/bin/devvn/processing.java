@@ -37,6 +37,8 @@ static boolean neu2 = true;
 static boolean neu3 = true;
 static boolean ThatsTheWord;
 static int possibleWords;
+static int c2d;
+static int PASSc2d;
 
 @SuppressWarnings("all")
 static void verarbeitung(List<String> field, ArrayList<String> known, char[] letters, int l, List<String> list, boolean dm) {
@@ -356,7 +358,8 @@ if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " 
 			 }wl = 0; neu1 = true; neu2 = true; neu3 = true;
 			 } 
 		}
-		compareToDict(wordBuilder1, list);
+		compareToDict(wordBuilder1, list, wl1, wordpositions.get(0), field_part, dm);
+		possibleWords = 0;
 	    wordBuilder1.clear(); wordBuilder2.clear(); wordBuilder3.clear();
 		
 }
@@ -366,21 +369,22 @@ static void verCalc(){
 }
 
 @SuppressWarnings("all")
-static void compareToDict(List<Character> word, List<String> list){
-	for(int i = 0; i < list.size(); i++){
+static void compareToDict(List<Character> word, List<String> list, int PASSwl, int PASSwp, List<String> PASSfield_part, boolean dm){
+	for(c2d = 0; c2d < list.size(); c2d++){
 		ThatsTheWord = true;
-		if(!(list.get(i).length() == word.size())) ThatsTheWord = false;
+		if(!(list.get(c2d).length() == word.size())) ThatsTheWord = false;
 		if(ThatsTheWord)
 		for(int c = 0; c < word.size(); c++){
 			if(word.get(c).equals('#'));
-			else{if(!(word.get(c) == (list.get(i).charAt(c)))) ThatsTheWord = false;}
+			else{if(!(word.get(c) == (list.get(c2d).charAt(c)))) ThatsTheWord = false;}
 		}
-		if(ThatsTheWord) {System.out.println("Das Wort kann ein " + list.get(i) + " sein."); possibleWords++;}
+		if(ThatsTheWord) {System.out.println("Das Wort kann ein " + list.get(c2d) + " sein."); PASSc2d = c2d; possibleWords++;}
 	}
-	if(possibleWords == 1); prepareNewChars(list.get()); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
+	if(possibleWords == 0)System.err.println("Es scheint kein Wort zu passen. Abtippfehler oder ein 'Word of Doom'.");
+	if(possibleWords == 1)prepareNewChars(list.get(PASSc2d), PASSwl, PASSwp, PASSfield_part, dm); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
 }
 
-static void addKnownChars(ArrayList<String> known, char[] letters, boolean dm){
+static void addKnownChars(List<String> known, char[] letters, boolean dm){
 	for(int i = 0; i < known.size(); i++){
 		int x=0;
 		while(true){
@@ -405,7 +409,16 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 }
 
 
-static void prepareNewChars(){
+static void prepareNewChars(String BasicWord, int wl, int wp, List<String> field_part, boolean dm){
+if(dm)	System.out.println(new StringBuffer().append("Wort: ").append(BasicWord).append(" - WL: ").append(wl).append(" - WP: ").append(wp).append(" - field_part: ").append(field_part));
+	BasicWord.toLowerCase();
+	ArrayList<String> chars = new ArrayList<String>();
+	//Alles bis hier sind nur Deklarationen
+	System.out.println(BasicWord);
+	for(int i = 0; i < BasicWord.length(); i++){
+		chars.add(BasicWord.charAt(i) + field_part.get(wp + i + 1));
+	}
+	System.out.println(chars);
 }
 
 }
