@@ -89,7 +89,7 @@ static void verarbeitung(List<String> field, ArrayList<String> known, char[] let
 		if(!verMap.get(i).equals("")) verMap_length++;
 	}
 	
-    idk.main(hrzMap, list, dm, hrzMap_length);
+    idk.main(hrzMap, list, dm, hrzMap_length, letters);
 	
 	//output.printProto(proto_output1, proto_output2, proto_output3, proto_output4, proto_output5, proto_output6, proto_output7, proto_output8, proto_output9, proto_output10, proto_output11, proto_output12, proto_output13, proto_output14, proto_output15, proto_output16, proto_output17, proto_output18, proto_output19, proto_output20, proto_output21, proto_output22, rows);			
     }
@@ -300,7 +300,7 @@ static void verticalice(boolean dm){
 }
 
 @SuppressWarnings("all")
-static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm, List<String> list){
+static void horCalc(int wl1, int wl2, int wl3, List<Integer>wordpositions, int zeile, List<String> field_part, boolean dm, List<String> list, char[] letters){
 	HashMap<Integer, String> Buffer = new HashMap<Integer, String>();
 
 	int wl = 0;
@@ -358,7 +358,7 @@ if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " 
 			 }wl = 0; neu1 = true; neu2 = true; neu3 = true;
 			 } 
 		}
-		compareToDict(wordBuilder1, list, wl1, wordpositions.get(0), field_part, dm);
+		compareToDict(wordBuilder1, list, wl1, wordpositions.get(0), field_part, dm, letters);
 		possibleWords = 0;
 	    wordBuilder1.clear(); wordBuilder2.clear(); wordBuilder3.clear();
 		
@@ -369,7 +369,7 @@ static void verCalc(){
 }
 
 @SuppressWarnings("all")
-static void compareToDict(List<Character> word, List<String> list, int PASSwl, int PASSwp, List<String> PASSfield_part, boolean dm){
+static void compareToDict(List<Character> word, List<String> list, int PASSwl, int PASSwp, List<String> PASSfield_part, boolean dm, char[] PASSletters){
 	for(c2d = 0; c2d < list.size(); c2d++){
 		ThatsTheWord = true;
 		if(!(list.get(c2d).length() == word.size())) ThatsTheWord = false;
@@ -381,7 +381,7 @@ static void compareToDict(List<Character> word, List<String> list, int PASSwl, i
 		if(ThatsTheWord) {System.out.println("Das Wort kann ein " + list.get(c2d) + " sein."); PASSc2d = c2d; possibleWords++;}
 	}
 	if(possibleWords == 0)System.err.println("Es scheint kein Wort zu passen. Abtippfehler oder ein 'Word of Doom'.");
-	if(possibleWords == 1)prepareNewChars(list.get(PASSc2d), PASSwl, PASSwp, PASSfield_part, dm); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
+	if(possibleWords == 1)prepareNewChars(list.get(PASSc2d), PASSwl, PASSwp, PASSfield_part, dm, PASSletters); //TODO Man nehme Zeile von field_part oder original rätsel und schaue nach den zahlen und gleiche dies ab mit wordlength und wordpositions für die buchstaben und ergänze sie
 }
 
 static void addKnownChars(List<String> known, char[] letters, boolean dm){
@@ -409,16 +409,21 @@ if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Array
 }
 
 
-static void prepareNewChars(String BasicWord, int wl, int wp, List<String> field_part, boolean dm){
+static void prepareNewChars(String BasicWord, int wl, int wp, List<String> field_part, boolean dm, char[] letters){
 if(dm)	System.out.println(new StringBuffer().append("Wort: ").append(BasicWord).append(" - WL: ").append(wl).append(" - WP: ").append(wp).append(" - field_part: ").append(field_part));
-	BasicWord.toLowerCase();
-	ArrayList<String> chars = new ArrayList<String>();
+	BasicWord = BasicWord.toLowerCase();
+	List<String> chars = new ArrayList<String>();
 	//Alles bis hier sind nur Deklarationen
-	System.out.println(BasicWord);
 	for(int i = 0; i < BasicWord.length(); i++){
 		chars.add(BasicWord.charAt(i) + field_part.get(wp + i + 1));
 	}
-	System.out.println(chars);
+if(dm)	System.out.println(chars);
+	for(int i = 0; i < chars.size(); i++){
+		if(!Character.isDigit(chars.get(i).charAt(1))){chars.remove(i); i--;}
+	}
+if(dm)	System.out.println(chars);
+	if(chars.isEmpty()) System.out.println("HÖ ICH DENKE MAL DU HAST SCHON VIELE BUCHSTABEN NH");
+	else addKnownChars(chars, letters, dm);
 }
 
 }

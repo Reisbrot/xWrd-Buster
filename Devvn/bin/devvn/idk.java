@@ -23,7 +23,7 @@ public class idk {
 	static List<Integer> wordpositions = new ArrayList<Integer>();
 	static List<Integer> seppositions = new ArrayList<Integer>();
 	
-		public static void main(HashMap<Integer,List<String>> posMap, List<String> list, boolean dm, int size){
+		public static void main(HashMap<Integer,List<String>> posMap, List<String> list, boolean dm, int size, char[] letters){
 			int length = posMap.get(1).size();
 if(dm)		System.out.println(posMap.get(1).size());
 			
@@ -64,7 +64,7 @@ if(dm)								System.out.println(wordpositions + " Anfang der Wörter");
 					}
 				}
 if(dm)			System.out.println(wordlength + "  " + wordlength2 + "  " + wordlength3 + " Wordlängdhs");			
-				processing.horCalc(wordlength, wordlength2, wordlength3, wordpositions, zeile, posMap.get(zeile), dm, list);
+				processing.horCalc(wordlength, wordlength2, wordlength3, wordpositions, zeile, posMap.get(zeile), dm, list, letters);
 				
 				wordlength = 0;
 				wordlength2 = 0;
