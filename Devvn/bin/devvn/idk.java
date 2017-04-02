@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import sun.security.acl.WorldGroupImpl;
+
 public class idk {
 	static int leer;
 	static int zeichen_gesamt;
@@ -20,15 +22,28 @@ public class idk {
 	static int wordlength3;
 	static boolean moreThn2Wrds;
 	static boolean rlyExct2Wrds;
+	static int zeichen;
 	static List<Integer> wordpositions = new ArrayList<Integer>();
 	static List<Integer> seppositions = new ArrayList<Integer>();
 	
-		public static void main(HashMap<Integer,List<String>> posMap, List<String> list, boolean dm, int size){
+		public static void main(List<String> list, boolean dm, int size, int zaile, int zaichen){
+			
+			HashMap<Integer,List<String>> posMap = processing.hrzMap;
+			wordlength = 0;
+			wordlength2 = 0;
+			wordlength3 = 0;
+			zeichen_folge = 0;
+			zeichen_gesamt = 0;
+			wordpositions.clear();
+			seppositions.clear();
+			moreThn2Wrds = false;
+			rlyExct2Wrds = false;
+			
 			int length = posMap.get(1).size();
 if(dm)		System.out.println(posMap.get(1).size());
 			
-			for(int zeile = 0; zeile < size; zeile++){
-				for(int zeichen = 0; zeichen < length; zeichen++){
+			for(int zeile = zaile; zeile < size; zeile++){
+				for(zeichen = zaichen; zeichen < length; zeichen++){
 					if(posMap.get(zeile).get(zeichen).equals("")){
 						leer++;
 						zeichen_folge = 0;
@@ -64,8 +79,9 @@ if(dm)								System.out.println(wordpositions + " Anfang der Wörter");
 					}
 				}
 if(dm)			System.out.println(wordlength + "  " + wordlength2 + "  " + wordlength3 + " Wordlängdhs");			
-				processing.horCalc(wordlength, wordlength2, wordlength3, wordpositions, zeile, posMap.get(zeile), dm, list);
+				processing.horCalc(zeile, posMap.get(zeile), dm, list);
 				
+				zeichen = 0;
 				wordlength = 0;
 				wordlength2 = 0;
 				wordlength3 = 0;
