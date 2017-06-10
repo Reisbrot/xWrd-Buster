@@ -42,10 +42,11 @@ static boolean init;
 
 @SuppressWarnings("all")
 static void verarbeitung(int letterl, List<String> list) {
+        Database g = new Database();
 	List<String> field = GUI.field;
 	ArrayList<String> known = GUI.inputs;
 	int l = GUI.length;
-	boolean dm = GUI.dm;
+	boolean dm = g.getDM();
 	letters = new char[letterl];
 	
 if(!init) {Arrays.fill(letters, 0, letters.length, ' ');
