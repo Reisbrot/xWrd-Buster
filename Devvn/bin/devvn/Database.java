@@ -10,7 +10,7 @@ public class Database {
     void setDM(boolean b) {
       dm = b;
       if(dm)
-      System.out.println("DevMode aktiviert.");
+          System.out.println("DevMode aktiviert.");
     }
     boolean getDM() {
         return dm;

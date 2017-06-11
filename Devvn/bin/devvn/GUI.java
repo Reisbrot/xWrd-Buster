@@ -84,7 +84,7 @@ if(g.getDM())  System.out.println("HIiiii" + field);
 	    break;
 	}
 if(g.getDM())	System.out.println("dx" + namelist);
-	    processing.verarbeitung(numberofletters, namelist);
+	    processing.verarbeitung(g, namelist);
 		
         
     }

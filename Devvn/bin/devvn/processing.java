@@ -41,13 +41,12 @@ static char[] letters;
 static boolean init;
 
 @SuppressWarnings("all")
-static void verarbeitung(int letterl, List<String> list) {
-        Database g = new Database();
+static void verarbeitung(Database g, List<String> list) {
 	List<String> field = GUI.field;
 	ArrayList<String> known = GUI.inputs;
 	int l = GUI.length;
 	boolean dm = g.getDM();
-	letters = new char[letterl];
+	letters = g.getLetters();
 	
 if(!init) {Arrays.fill(letters, 0, letters.length, ' ');
 	
