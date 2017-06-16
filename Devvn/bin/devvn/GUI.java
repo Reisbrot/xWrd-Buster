@@ -56,7 +56,7 @@ public class GUI {
 		    System.out.println("Nun sag mir einen Buchstaben, welchen du schon kennst und gibst dann die dazugeh\u00f6rige Zahl an. Wenn du keine weiteren Buchstaben kennst, schreib 'Weiter'");
 		    user_input = new java.util.Scanner( System.in ).nextLine();
 		    user_input.toLowerCase();
-        if(g.getDM())System.out.println(user_input);
+        if(g.getDM())System.out.println("User Input: " + user_input);
 		    if(user_input.equals("weiter"))break;
 		    
 		    String cleanedinput="";
@@ -70,20 +70,20 @@ public class GUI {
 		    }inputs.add(cleanedinput);
 
 	    }
-if(g.getDM())	System.out.println(inputs);
+if(g.getDM())	System.out.println("Inputs: " + inputs);
 		
 if(!g.getDM())while(true){
 		System.out.println("jetzt tippe dein R\u00e4tzel von oben Links nach unten Rechts ab, dh Zahlen sind Zahlen, leerer Platz ist '0'");
 	    xword = new java.util.Scanner( System.in ).nextLine();
 	    xword.toLowerCase();
 	    field = new ArrayList<String>(Arrays.asList(xword.split(" ")));
-if(g.getDM())  System.out.println("HIiiii" + field);
+if(g.getDM())  System.out.println("Field: " + field);
 	    
 	    System.out.print("Als letztes noch die Zeilenl\u00e4nge: ");
 	    length = new java.util.Scanner( System.in ).nextInt();
 	    break;
 	}
-if(g.getDM())	System.out.println("dx" + namelist);
+if(g.getDM())	System.out.println("Namelist: " + namelist);
 	    processing.verarbeitung(g, namelist);
 		
         

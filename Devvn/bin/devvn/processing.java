@@ -40,11 +40,10 @@ static int PASSc2d;
 static char[] letters;
 static boolean init;
 
-@SuppressWarnings("all")
 static void verarbeitung(Database g, List<String> list) {
 	List<String> field = GUI.field;
 	ArrayList<String> known = GUI.inputs;
-	int l = GUI.length;
+	int length = GUI.length;
 	boolean dm = g.getDM();
 	letters = g.getLetters();
 	
@@ -54,7 +53,7 @@ if(!init) {Arrays.fill(letters, 0, letters.length, ' ');
 		  cleaned_letters = new char[known.size()];
 		  addKnownChars(known, dm, list);
    
-		  field_init(field, l);}
+		  field_init(field, length);}
     
 	replacing_replacing(dm);
 	verticalice(dm);
@@ -212,7 +211,7 @@ static void replacing_replacing(boolean dm){
 		hrzMap.put(keyH, field_part22);
 		keyH++;
 		
-		System.out.println(hrzMap);
+		System.out.println("hrzMap: " + hrzMap);
 		keyH = 0;
 	}
 
@@ -269,7 +268,7 @@ static void verticalice(boolean dm){
 		if(i == 20) {vertical_part21 = toVertical(20); verMap.put(keyV, vertical_part21); keyV++;}
 		if(i == 21) {vertical_part22 = toVertical(21); verMap.put(keyV, vertical_part22); keyV++;}
 	}
-	System.out.println(verMap);
+	System.out.println("verMap: " + verMap);
 	
 }
 
@@ -330,10 +329,10 @@ if(dm)				 System.out.println(relativeToWordBeginning + " in Wort " + (i+1) + " 
 					 if(neu3) for(int a = 0; a < wl1; a++)wordBuilder3.add('#');
 					 wordBuilder3.set(relativeToWordBeginning - 1, field_part.get(buffer).charAt(0));
 					 break;
-				 default: System.out.println("m�h " + wl);
+				 default: System.out.println("mh " + wl);
 				 }
 				 }
-				 System.out.println(wordBuilder1 + " " + wordBuilder2 + " " + wordBuilder3); 
+				 System.out.println("wordBuilder 1-3: " + wordBuilder1 + " " + wordBuilder2 + " " + wordBuilder3); 
 			 }wl = 0; neu1 = true; neu2 = true; neu3 = true;
 			 } 
 		}
@@ -347,7 +346,6 @@ static void verCalc(){
 	
 }
 
-@SuppressWarnings("all")
 static void compareToDict(List<String> list, int PASSwl, int PASSwp, List<String> PASSfield_part, boolean dm, int PASSzeile){
 	List<Character> word = wordBuilder1;
 	
@@ -366,7 +364,7 @@ static void compareToDict(List<String> list, int PASSwl, int PASSwp, List<String
 }
 
 static void addKnownChars(List<String> known, boolean dm, List<String>list){
-if(dm)	System.err.println("Anfang von addKnownChars");
+if(dm)	System.out.println("Anfang von addKnownChars");
 	for(int i = 0; i < known.size(); i++){
 	  int x=0;
 	  while(true){
@@ -386,13 +384,13 @@ if(dm)	System.err.println("Anfang von addKnownChars");
       letters[numbers[i]-1] = cleaned_letters[i]; 
 	}
 
-if(dm)System.out.println("iehfiuh  " + Arrays.toString(numbers) + "    " + Arrays.toString(cleaned_letters) + "    " + Arrays.toString(letters));
+if(dm)System.out.println("Numbers: " + Arrays.toString(numbers) + "   Cleaned Letters: " + Arrays.toString(cleaned_letters) + "   Letters: " + Arrays.toString(letters));
 if(init){ 	
 	        replacing_replacing(dm);
             verticalice(dm);
             idk.main(list, dm, 19, 0, 0); //TODO ersetz 19 durch anzahl von Zeilen - oben auch
 		}
-if(dm)	System.err.println("Ende von addKnownChars");
+if(dm)	System.out.println("Ende von addKnownChars");
 }
 
 
@@ -452,8 +450,6 @@ static void field_init(List<String>field, int l){
 }
 	
 }
-
-
 
 
 
