@@ -3,15 +3,14 @@ package devvn;
 import java.util.*;
 
 public class GUI {
- String[] knownletters;	
- static String user_input;
- static String xword;
- static String cleanedxword;
- static ArrayList<String> inputs = new ArrayList<String>();
- static List<String> field = new ArrayList<String>();
- static int length;
+String[] knownletters;	
+static String user_input;
+static String xword;
+static String cleanedxword;
+static ArrayList<String> inputs = new ArrayList<String>();
+static List<String> field = new ArrayList<String>();
+static int length;
 
-    @SuppressWarnings("resource")
     public static void main(String[] args){
         
 
