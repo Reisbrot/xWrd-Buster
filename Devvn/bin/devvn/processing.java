@@ -40,7 +40,7 @@ static char[] letters;
 static boolean init;
 
 static void verarbeitung(Database g, List<String> list) {
-List<String> field = GUI.field;
+List<String> field = GUI.xWrd;
 ArrayList<String> known = GUI.inputs;
 int length = GUI.length;
 boolean dm = g.getDM();

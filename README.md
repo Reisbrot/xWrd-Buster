@@ -1,4 +1,4 @@
-# xWrd-Buster
+﻿# xWrd-Buster <span style="color:rot"> NOT SUPPORTED ANYMORE -> Eigener Code nicht mehr nachzuvollziehen ;-; </span>
 ##### Löst DEIN [Zahlenrätsel](https://de.wikipedia.org/wiki/Kreuzwortr%C3%A4tsel#Zahlenr.C3.A4tsel), weil DU, genau DU, garantiert über 80 bist!
 
 
